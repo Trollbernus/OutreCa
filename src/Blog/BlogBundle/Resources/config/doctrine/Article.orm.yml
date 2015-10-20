@@ -1,0 +1,40 @@
+Blog\BlogBundle\Entity\Article:
+    type: entity
+    table: blog_article
+    repositoryClass: Blog\BlogBundle\Entity\ArticleRepository
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        creationDate:
+            type: datetime
+            column: creation_date
+        title:
+            type: string
+            length: 255
+        content:
+            type: text
+        published:
+            type: boolean
+        publicationDate:
+            type: datetime
+            column: publication_date
+        lastEdition:
+            type: datetime
+            column: last_edition
+    properties:
+        title:
+            - NotBlank: ~
+        content:
+            - NotBlank: ~
+    manyToOne:
+        author:
+            targetEntity: Blog\UserBundle\Entity\User
+            inversedBy: articles
+            joinColumn:
+                name: author_id
+                referencedColumnName: id
+    lifecycleCallbacks:
+        preUpdate: [updateDate]

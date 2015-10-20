@@ -1,0 +1,10 @@
+{% extends 'BlogBlogBundle::layout.html.twig' %}
+
+{% block content_row %}
+<div class="row">
+    <a href="{{ path('blog', { 'author': "Dora", 'page': 1 }) }}">
+         <div class="col-md-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, ut, aspernatur, mollitia, consectetur doloremque quam consequatur nam dolore labore inventore quis earum numquam aut assumenda veniam blanditiis ullam accusantium debitis.</div>
+    </a>
+    <div class="col-md-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, quisquam pariatur deleniti reprehenderit voluptates consequuntur rerum vel corporis minus fugiat dolores ea repellendus consectetur mollitia fuga a aliquam amet eos.</div>
+</div>
+{% endblock content_row %}

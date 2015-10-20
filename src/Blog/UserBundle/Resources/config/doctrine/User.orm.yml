@@ -1,0 +1,26 @@
+Blog\UserBundle\Entity\User:
+    type: entity
+    table: blog_user
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+        facebook_id:
+            type: string
+            length: 255
+        facebook_access_token:
+            type: string
+            length: 255
+        google_id:
+            type: string
+            length: 255
+        google_access_token:
+            type: string
+            length: 255
+    oneToMany:
+        articles:
+            targetEntity: Blog\BlogBundle\Entity\Article
+            mappedBy: author
+    lifecycleCallbacks: {  }

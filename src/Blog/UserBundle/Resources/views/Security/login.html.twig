@@ -1,0 +1,22 @@
+{% extends "BlogUserBundle::layout.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block fos_user_content %}
+
+{% if error %}
+    {% from 'MopaBootstrapBundle::flash.html.twig' import flash %}
+    {{ flash('danger', error.messageKey|trans(error.messageData, 'security')) }}
+{% endif %}
+
+{{ form_start(form) }}
+
+    {{ form_errors(form) }}
+    {{ form_widget(form) }}
+    <button type="submit" class="btn btn-primary">{{ 'security.login.submit'|trans }}</button>
+
+{{ form_end(form) }}
+
+{{ render(url('hwi_oauth_connect')) }}
+
+{% endblock fos_user_content %}

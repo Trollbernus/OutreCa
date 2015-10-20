@@ -1,0 +1,43 @@
+{% extends 'BlogBlogBundle::layout.html.twig' %}
+
+{% block content %}
+
+<table class="table table-striped">
+    <caption><h3>Liste des articles de {{ author }}</h3></caption>
+    <thead>
+        <tr>
+            {% if is_granted("ROLE_AUTHOR") %}
+            <th>#</th>
+            <th>Date de création</th>
+            <th>Titre</th>
+            <th>Publier</th>
+            <th>Date de publication</th>
+            {% else %}
+            <th>Date de publication</th>
+            <th>Titre</th>
+            {% endif %}
+        </tr>
+    </thead>
+    <tbody>
+        {% for article in articles %}
+            {% if is_granted("ROLE_AUTHOR") %}
+            <tr>
+                <td>{{ article.id }}</td>
+                <td>{{ article.creationDate|date('d/m/Y h:m') }}</td>
+                <td><a href="{{ path('blog_show', {'author': article.author, 'id': article.id, 'title': article.title }) }}">{{ article.title }}</a></td>
+                <td>{{ article.published ? ((article.publicationDate <= currentDatetime) ? 'Oui' : 'Pas encore'):'Non' }}</td>
+                <td>{{ article.publicationDate|date('d/m/Y h:m') }}</td>
+            </tr>
+            {% else %}
+                {% if article.published and article.publicationDate <= currentDatetime %}
+            <tr>
+                <td>{{ article.publicationDate|date('d/m/Y h:m') }}</td>
+                <td><a href="{{ path('blog_show', {'author': article.author, 'id': article.id, 'title': article.title }) }}">{{ article.title }}</a></td>
+            </tr>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

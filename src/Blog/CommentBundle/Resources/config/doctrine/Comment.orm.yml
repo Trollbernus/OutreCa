@@ -1,0 +1,15 @@
+Blog\CommentBundle\Entity\Comment:
+    type: entity
+    table: blog_comment
+    fields:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    manyToOne:
+        thread:
+            targetEntity: Thread
+        author:
+            targetEntity: Blog\UserBundle\Entity\User
+    lifecycleCallbacks: { }

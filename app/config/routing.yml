@@ -1,0 +1,30 @@
+# Blog
+
+# BlogBlogBundle
+blog_blog:
+    resource: "@BlogBlogBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+# BlogUserBundle
+blog_user:
+    resource: "@BlogUserBundle/Resources/config/routing.yml"
+    prefix:   /
+
+
+# Vendor
+
+# FOS Comment
+fos_comment_api:
+    type: rest
+    resource: "@FOSCommentBundle/Resources/config/routing.yml"
+    prefix: /api
+    defaults: { _format: html }
+
+# Imagine
+_liip_imagine:
+    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+
+# ElFinder
+elfinder:
+     resource: "@FMElfinderBundle/Resources/config/routing.yml"

@@ -1,0 +1,43 @@
+root:
+    path: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /homepage
+        permanent: true
+
+homepage:
+    path:  /homepage
+    defaults: { _controller: BlogBlogBundle:Default:homepage }
+
+about:
+    path:  /about
+    defaults: { _controller: BlogBlogBundle:Default:about }
+
+# Blog
+blog:
+    path: /blog/{author}/{page}
+    defaults: { _controller: BlogBlogBundle:Blog:blog }
+    requirements:
+        page: \d+
+
+blog_show:
+    path: /blog/{author}/{id}_{title}
+    defaults: { _controller: BlogBlogBundle:Blog:show, id: 0, title: "" }
+    requirements:
+        id: \d+
+
+blog_create:
+    path: /author/blog/create
+    defaults: { _controller: BlogBlogBundle:Blog:edit, id: 0 }
+
+blog_edit:
+    path: /author/blog/edit/{id}
+    defaults: { _controller: BlogBlogBundle:Blog:edit }
+    requirements:
+        id: \d+
+
+blog_delete:
+    path: /author/blog/delete/{id}
+    defaults: { _controller: BlogBlogBundle:Blog:delete }
+    requirements:
+        id: \d+

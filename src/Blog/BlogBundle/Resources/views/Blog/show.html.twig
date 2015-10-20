@@ -1,0 +1,35 @@
+{% extends 'BlogBlogBundle::layout.html.twig' %}
+
+{% block head_style %}
+{{ parent() }}
+{% stylesheets '@FOSCommentBundle/Resources/assets/css/comments.css' %}
+<link type="text/css" rel="stylesheet" href="{{ asset_url }}" />
+{% endstylesheets %}
+{% endblock head_style %}
+
+
+{% block content %}
+<div class="article">
+
+    <header>
+        <address><strong>{{ article.author }}</strong>, le {{ article.publicationDate|date('d/m/Y') }}</address>
+        <h3>{{ article.title }}</h3>
+        {% if is_granted("ROLE_AUTHOR") %}
+        <span class="btn-group">
+            <a href="{{ path('blog_edit', {'id': article.id }) }}" class="btn btn-warning">Modifier</a>
+            <a href="{{ path('blog_delete', {'id': article.id }) }}" class="btn btn-danger">Supprimer</a>
+        </span>
+        {% endif %}
+    </header>
+
+    <div class="content">{{ article.content|raw('html') }}</div>
+
+    <div id="fos_comment_thread"></div>
+
+</div>
+{% endblock %}
+
+{% block foot_script %}
+{{ parent() }}
+{% include 'FOSCommentBundle:Thread:async.html.twig' with {'id': article.id} %}
+{% endblock foot_script %}

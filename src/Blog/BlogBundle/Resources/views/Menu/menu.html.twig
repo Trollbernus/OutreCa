@@ -1,0 +1,2 @@
+{% extends 'MopaBootstrapBundle:Menu:menu.html.twig' %}
+{% block label %}{% if item.getExtra('trans', true) %}{{ item.label|trans(item.getExtra('translation_params', {}), item.getExtra('translation_domain', 'messages')) }}{% else %}{{ item.label }}{% endif %}{% endblock %}

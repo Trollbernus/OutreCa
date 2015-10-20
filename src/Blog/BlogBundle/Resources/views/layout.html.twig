@@ -1,0 +1,26 @@
+{% extends 'MopaBootstrapBundle::base_initializr.html.twig' %}
+
+{% block title %}L'Outre-Ça{% endblock title %}
+
+{% block headline %}L'Outre-Ça{% endblock headline %}
+
+{% block navbar %}
+{% embed 'BlogBlogBundle::Navbar/navbar.html.twig' with { staticTop: true } %}
+    {% block menu %}
+        {{ mopa_bootstrap_menu('BlogBlogBundle:MenuBuilder:mainMenu') }}
+        {{ mopa_bootstrap_menu('BlogBlogBundle:MenuBuilder:userMenu') }}
+    {% endblock %}
+{% endembed %}
+{% endblock navbar %}
+
+{% block jquery_cdn_url %}//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js{% endblock jquery_cdn_url %}
+{% block jquery_local_url %}{{ asset('js/jquery.js') }}{% endblock jquery_local_url %}
+
+{% block foot_script %}
+{{ parent() }}
+{% javascripts '@MopaBootstrapBundle/Resources/public/bootstrap/js/dropdown.js' %}
+<script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% endblock foot_script %}
+
+{% block footer %}{% endblock footer %}

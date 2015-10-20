@@ -1,0 +1,7 @@
+# Menu
+menu:
+    home: Accueil
+    about: À propos
+    my_account: Mon compte
+    new_article: Créer un article
+    my_articles: Mes articles

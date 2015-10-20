@@ -1,0 +1,19 @@
+{% extends "BlogUserBundle::layout.html.twig" %}
+
+
+{% block content %}
+<div class="well">
+    <p><strong>Titre :</strong> {{ article.title }}</p>
+
+    <div class="prettyprint">
+        <form method="post" {{ form_enctype(form) }}>
+            {{ form_widget(form) }}
+
+            <div class="btn-group">
+                <a href="{{ path('blog_show', {'author': article.author, 'id': article.id, 'title': article.title }) }}" class="btn btn-primary">Annuler</a>
+                <button type="submit" class="btn btn-danger">Supprimer</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

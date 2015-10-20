@@ -1,0 +1,8 @@
+Blog\CommentBundle\Entity\Thread:
+    type: entity
+    table: blog_comment_thread
+    fields:
+        id:
+            type: string
+            id: true
+    lifecycleCallbacks: { }

@@ -1,0 +1,67 @@
+{% extends "BlogUserBundle::layout.html.twig" %}
+
+
+{% block head_style %}
+{{ parent() }}
+{% stylesheets
+    '@MopaBootstrapBundle/Resources/public/components/smalot-bootstrap-datetimepicker/build/build_standalone.less'
+    %}
+    <link type="text/css" rel="stylesheet" href="{{ asset_url }}">
+{% endstylesheets %}
+{% endblock head_style %}
+
+
+{% block content %}
+
+{{ form_start(form) }}
+
+    {{ form_errors(form) }}
+    {{ form_widget(form) }}
+    <button type="submit" class="btn btn-primary pull-right">{% if id is empty %}Ajouter l'article{% else %}Modifier l'article{% endif %}</button>
+
+{{ form_end(form) }}
+
+{% endblock %}
+
+
+{% block foot_script %}
+
+{{ parent() }}
+
+{% javascripts
+    '@MopaBootstrapBundle/Resources/public/components/smalot-bootstrap-datetimepicker/js/bootstrap-datetimepicker.js'
+    '@MopaBootstrapBundle/Resources/public/components/smalot-bootstrap-datetimepicker/js/locales/bootstrap-datetimepicker.fr.js'
+    %}
+    <script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+
+<script type="text/javascript">
+(function($){
+    var pickerOptions = {
+        autoclose     : true,
+        format        : 'dd MM yyyy - hh:ii',
+        language      : 'fr',
+        pickerPosition: 'top-right',
+        todayBtn      : true
+    };
+
+    $el = $('[data-provider="datetimepicker"]');
+    $('#mastio_blogbundle_articletype_publicationDate_mopa_picker_display').prop('disabled', true);
+    if ($el.data('datetimepicker')) return;
+    $el.datetimepicker(pickerOptions);
+{% if id is not empty %}
+    $el.datetimepicker('setValue');
+    $(document).on(
+        'click',
+        '[data-provider="datetimepicker"] .input-group-addon:first',
+        function (e) {
+            $el.datetimepicker('setDate', new Date('{{ publicationDate|date('c') }}'));
+        }
+    );
+{% else %}
+    $el.datetimepicker('reset');
+{% endif %}
+})(jQuery);
+</script>
+
+{% endblock foot_script %}
