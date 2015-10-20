@@ -29,7 +29,7 @@
         "twbs/bootstrap-sass": "dev-master",
         "knplabs/knp-paginator-bundle": "dev-master",
         "knplabs/knp-menu-bundle": "dev-master",
-        "knplabs/knp-menu": "2.0.*@dev",
+        "knplabs/knp-menu": "~2.1",
         "craue/formflow-bundle": "~2.0",
         "liip/imagine-bundle": "dev-master",
         "Trsteel/ckeditor-bundle": "dev-master",

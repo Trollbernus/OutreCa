@@ -10,15 +10,19 @@ Blog\UserBundle\Entity\User:
         facebook_id:
             type: string
             length: 255
+            nullable: true
         facebook_access_token:
             type: string
             length: 255
+            nullable: true
         google_id:
             type: string
             length: 255
+            nullable: true
         google_access_token:
             type: string
             length: 255
+            nullable: true
     oneToMany:
         articles:
             targetEntity: Blog\BlogBundle\Entity\Article
