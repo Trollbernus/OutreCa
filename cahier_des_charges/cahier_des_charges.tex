@@ -1,0 +1,562 @@
+%Pour compiler ce fichier avec bibtex :
+%pdflatex 20140814_raport.tex
+%bibtex 20140814_raport.aux
+%pdflatex 20140814_raport.tex
+%pdflatex 20140814_raport.tex
+
+%lien dropbo : https://www.dropbox.com/s/c7n7242xsq36t4y/20140816_rapport.pdf
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%        Packages utilisés                %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+	%[twoside,12pt]
+
+	%\documentclass[french,12pt]{report} %pour une police de 12 au cas où
+	\documentclass[french]{report}
+
+	\usepackage[T1]{fontenc}
+	\usepackage[utf8]{inputenc} %Permet d'utiliser des caractères spéciaux : éèàçù etc. plus sûr que \usepackage[latin9]{inputenc}
+	%\usepackage[latin9]{inputenc}
+
+	\usepackage[french]{babel}
+
+	\usepackage{geometry} %Personnaliser l'aspect géométrique du document.
+	\geometry{top=3cm, bottom=3cm, left=3cm , right=3cm} %plus simple que le suivant, que je ne maîtrise pas...
+	%\geometry{verbose,tmargin=2.5cm,bmargin=2.5cm,lmargin=1.5cm,rmargin=1.5cm,headheight=2.5cm,headsep=2.5cm,footskip=2.5cm}
+	
+	\usepackage{amstext} %??
+	\usepackage{graphicx} %??
+	%\usepackage{amsmath} %Utilisé plus bas
+	\usepackage{amssymb} %??
+	\usepackage{hyperref} %Celui-là il est surpuissant : il fait tous les liens hypertexte et intratexte. [hidelinks]==> pas de couleur 
+	\hypersetup{colorlinks=false }
+	%\hypersetup{hidelinks}
+
+
+	\usepackage[footnotesize]{caption} %Moarf. Dans le doute je le garde.
+	%\usepackage{graphicx}
+	\usepackage{amsmath, amssymb} %oui mais ???
+	%\usepackage[applemac]{inputenc}
+	%\usepackage[T1]{fontenc}
+	\usepackage{color} %???
+	%\usepackage{times} %permet de choisir la police, mais la Latin Modern est tellement belle que je n'y touche pas.
+	%\usepackage[francais]{babel} %déjà utilisé.
+	%\usepackage{fullpage} %définit tout une mise en page qui bousille le package geometry !!!! ==> je ne l'utilise pas.
+	\usepackage{natbib} %Pour la bibliographie ?
+	\usepackage{colortbl} %pour les couleurs
+
+	\usepackage[french]{minitoc} % papy : pour créer une table des matières juste avant l'annexe. Toujours pas réussi à utiliser ce truc infernal.
+	\usepackage{tocloft}  
+	\usepackage{titletoc}  
+	\usepackage{appendix} %papy : utiliser la commande \appendix 
+	\usepackage{eurosym} %papy : pour ajouter le symbole € en tapant \euro
+	%\usepackage{minitoc}
+	\usepackage{colortbl} %papy : pour les couleurs du tableau
+	\usepackage{lipsum}
+	\usepackage{amsthm} %théorèmes, etc.
+	\usepackage{stmaryrd} %crochets d'entiers
+	\usepackage{empheq} %équations encadrées
+	\usepackage{mathrsfs}  %zoulies majuscules
+	\usepackage{tikz} %graphiques en latex
+	\usepackage{yhmath} %arc de cercle sur lettres : \wideparen{AB}
+	\usepackage{bm} %\bm{truc} = truc en gras mais avec la bonne police
+
+	%\usepackage{fancyhdr} %bas de pages %Plüthaar.
+	%\pagestyle{fancy}
+
+
+	\makeatletter
+
+	%%%%%%%%%%%%%%%%quelques commandes dont je n'ai pas encore saisi l'utilité.
+	\def \eps {\varepsilon}
+	\def\percent{\%}
+	\def\etal{{et al.}}
+
+
+
+	%%%%%%%%%%%Commandes pour la bibliographie.
+		\def\aj{\textit{The Astronomical Journal}}
+
+
+		\def\nat{\textit{Nature}}
+		\def\icarus{\textit{Icarus}}
+		\def\aap{\textit{Astronomy and Astrophysics}}
+		\def\grl{\textit{Geophysical Research Letters}}
+		\def\jgr{\textit{Journal of Geophysical Research}}
+
+
+
+
+
+	\newcommand{\figpath}{../figures/}
+	\newcommand{\bibpath}{/Volumes/USER/robutel/Phil/Articles/base/}
+
+
+
+
+
+
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% LyX specific LaTeX commands.%%% ==> et ???
+	\DeclareRobustCommand{\greektext}{%
+	  \fontencoding{LGR}\selectfont\def\encodingdefault{LGR}}
+	\DeclareRobustCommand{\textgreek}[1]{\leavevmode{\greektext #1}}
+	\DeclareFontEncoding{LGR}{}{}
+	\DeclareTextSymbol{\~}{LGR}{126}
+	\newcommand{\lyxmathsym}[1]{\ifmmode\begingroup\def\b@ld{bold}
+	  \text{\ifx\math@version\b@ld\bfseries\fi#1}\endgroup\else#1\fi}
+
+
+	\makeatother
+
+
+
+	\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%Théorèmes, démonstrations, etc.
+	%
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	\newtheorem{post}{Postulat}
+	\newtheorem{theorem}{Théorème}
+	\newtheorem{lemme}{Lemme}
+	\newtheorem{definition}{Définition}
+	\newtheorem{cor}{Corrolaire}
+	\theoremstyle{plain}
+
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%bas de page, haut de page
+	%        etc.
+	%		Plüthaar.
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+	%\renewcommand{\headrulewidth}{1pt}
+	%\fancyhead[C]{\textbf{page \thepage}} 
+	%\fancyhead[L]{\leftmark}
+	%\fancyhead[R]{machin}
+
+	%\renewcommand{\footrulewidth}{1pt}
+	%\fancyfoot[C]{Léo BERNUS} 
+	%\fancyfoot[L]{truc}
+	%\fancyfoot[R]{\leftmark}
+
+
+
+\begin{document}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                    %
+%                          Page de garde                             %
+%                                                                    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+	\begin{titlepage}
+
+	\begin{center}
+
+
+	%%%%%%%%%%%%%
+	%  Logos    %
+	%%%%%%%%%%%%%
+
+
+
+	%\begin{center}
+	%  \includegraphics[width = 40mm]{logos/SANSELIPS.jpg} \hfill
+	%  \includegraphics[width = 40mm]{logos/logo_IMCCE_small.jpg} \hfill
+	%  \includegraphics[width = 40mm]{logos/UPMC_pantones_7504-166.jpg} \hfill
+	%  \includegraphics[width = 35mm]{logos/ens.jpg}
+	    
+	%\end{center}
+
+
+
+
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%   Code pour zoulie page de garde. NE PAS TOUCHER !!!!!!!!!    %
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+	%%%%%%%%%%%%%%%%%
+	%Si ce modèle de page de garde ne te plaît pas, cherches-en d'autres (sur internet, dans des manuels de LaTeX...). Les créer, c'est beaucoup plus compliqué.
+	%%%%%%%%%%%%%%%%%
+
+
+
+
+
+	\begin{minipage}[t]{0.3\textwidth}
+	  \begin{flushleft}
+	    
+	    
+	  \end{flushleft}
+	\end{minipage}
+	\begin{minipage}[t]{0.3\textwidth}
+	  \begin{center}
+	    
+	  \end{center}
+	\end{minipage}
+	\begin{minipage}[t]{0.3\textwidth}
+	  \begin{flushright}
+	       
+	  \end{flushright}
+	\end{minipage}
+	\\[1cm]
+
+
+	\textsc{\Large }\\[0.6cm]
+	\HRule \\[0.8cm]
+	{\huge \bfseries Cahier des charges \\ L'Outre-Ça}\\[0.4cm]
+	\HRule \\[1cm]
+
+	\begin{minipage}[t]{0.3\textwidth}
+	  \begin{flushleft} \large
+	    \emph{Graphismes :}\\
+	    Trollbernus
+	  \end{flushleft}
+	\end{minipage}
+	\begin{minipage}[t]{0.6\textwidth}
+	  \begin{flushright} \large
+	    \emph{Programmation :} \\
+		Dora  
+		%Ça serait quand même pas mal d'obtenir leurs prénoms et de savoir d'où ils vennent...
+
+
+	  \end{flushright}
+
+	\end{minipage}
+	%\\[2cm]
+
+
+
+
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+	%      Images pour la page de garde    %
+	%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+	%%%Ça c'est pas pour moi mais je le garde on sait jamais..
+
+	%\begin{minipage}[t]{0.6\textwidth}
+	%  \begin{flushcenter} \large
+	%    \emph{date de remise du rapport :} \\
+	%    35 décembre 2048
+	%  \end{flushcenter}	
+	%\end{minipage}
+	%\\[2cm]
+	%
+
+
+
+	%\begin{center}
+	  %\includegraphics[scale=0.965]{mimas_noire_2.jpg} \\ %\hfill
+	  %\includegraphics[width = 72mm]{mimas_rings.jpg} \hfill
+	  %\includegraphics[width = 40mm]{UPMC_pantones_7504-166.jpg} \hfill
+	  %\includegraphics[width = 35mm]{ens.jpg} 
+	%\end{center}
+
+
+
+
+
+	{\large   \today }
+
+
+
+
+
+
+	\vfill
+
+
+
+	\end{center}
+
+	\end{titlepage}
+
+
+
+
+
+	\pagebreak{}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%       troisième page : table des matières + abstract.    %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+	\tableofcontents
+
+
+
+
+
+	\pagebreak
+
+
+
+\chapter{La page d'accueil}
+		Une sorte de sommaire du site où on peut accéder à tout ce qu'il y a à  l'intérieur avec une arborescence logique. 
+		\section{Header}
+			Les petits boutons qu'il y a dans le header :
+			\begin{enumerate}
+				\item Un bouton qui mène aux partenaires (i.e. autres sites que nous recommandons).
+				\item Un bouton pour s'inscrire/se connecter.
+				\item Un bouton "voir les inscrits".
+				\item Un bouton "à propos".
+				\item Un bouton "contact"\footnote{À ce propos, si on loue un serveur et qu'on achète un nom de domaine, on pourrait créer des boîtes mail du genre \href{mailto:oxylos@outre-ca.fr}{oxylos@outre-ca.fr}.}.
+				\item Galerie
+				\item Un bouton "Vieilles archives" pour pouvoir consulter tous les articles de l'ancien site.
+			\end{enumerate}
+			La galerie est une nouveauté sur le site. Elle regroupera toutes les BD (terminées ou en cours). Ce sera l'occasion de mettre en valeur le lecteur de BD qu'on mettra en place.
+
+
+		\section{Contenu principal}
+			Les grosses images sur lesquelles ont pourra cliquer, qui mèneront au contenu important du site.
+			\begin{enumerate}
+				\item Blog d'Oxylos
+				\item Blog de Tarran
+				\item Les actualités (les quelques derniers articles des blogs qui viennent de sortir) 
+			\end{enumerate}
+
+
+		\section{Footer}
+			\begin{enumerate}
+				\item \emph{L'Outre-Ça - 2013-2015 - Réalisation par Dora et Oxylos.}
+				\item \emph{Le contenu de ce site n'est pas libre de droits, merci de contacter les auteurs pour toute demande d'utilisation}\footnote{Le "toute demande d'utilisation" est en fait un lien vers la rubrique contact.}.
+				\item Flux RSS d'Oxylos.
+				\item Flux RSS de Tarran. 
+			\end{enumerate}
+
+
+\chapter{Blogs}
+	Quasiment aucune différence entre avant et maintenant. 
+
+		\section{Header}
+			Les blogs auront plus d'indépendance qu'avant. En effet, chaque blog aura une bannière propre qui fait retourner à l'accueil du blog quand on clique dessus. Le header sera également légèrement différent : au lieu d'avoir un seul bouton d'accueil, il y aura un bouton d'accueil pour Oxylos, et un autre pour retourner à l'accueil de l'Outre-Ça. De plus, les archives de l'ancien site ne seront pas accessibles via le blog, on pourra seulement accéder aux archives du nouveau blog, mais aussi à la gallerie. Pour résumer, voici à quoi ressemble le header (quasiment identique à la page d'accueil):
+			\begin{enumerate}
+				\item Un bouton qui mène aux partenaires (i.e. autres sites que nous recommandons).
+				\item Un bouton pour s'inscrire/se connecter.
+				\item Un bouton "voir les inscrits".				
+				\item Un bouton "à propos".
+				\item Un bouton "contact".
+				\item Un bouton "outre-ça" pour retourner à l'accueil du site.
+				\item Un bouton "Oxylos" ou "Tarran" selon le blog où l'on se trouve, pour retourner à l'accueil du blog.
+				\item Galerie
+				\item Un bouton "archives" qui permet de consulter les archives du blog, mais pas de l'ancien site.
+			\end{enumerate}
+
+		\section{Contenu}
+			Bien sûr, une bannière. Quand on clique dessus, cela fait le même effet que quand on clique sur le bouton "Oxylos" ou "Tarran" selon le blog où l'on se trouve.
+
+			Ensuite, la structure est presque la même que sur la version précédente de l'Outre-Ça : un blog qui fonctionne en articles chronologiques, avec des commentaires, etc. La nuance, c'est que presque toutes mes images et mes BD sont aussi systématiquement rangées dans la gallerie (je préciserai son contenu dans le chapitre \ref{galerie}). Ainsi, quand on clique dessus, le lecteur de BD (ou d'image) s'active automatiquement pendant que tout le reste du site s'assombrit. J'ai dit "presque" parce que si je veux faire un lien vers un autre site via une image, ou encore si je veux juste faire un petit gribouilli infâme, je n'ai pas forcément envie que ça apparaisse sur la gallerie.
+
+			Pour Tarran qui ne dessine pas, à moins qu'il n'écrive lui-même précisément ce qu'il veut, je pense qu'on peut laisser son blog tel quel (sauf pour le design sur lequel je travaillerai bientôt).
+
+		\section{Footer}
+			Presque identique à la page d'accueil. Simplement, sur la partie "Oxylos", on enlève le flux RSS de Tarran, et réciproquement.
+
+
+\chapter{Galerie} \label{galerie} 
+	La partie intégralement nouvelle : lis attentivement.
+	\section{Header}
+		\begin{enumerate}
+			\item Un bouton qui mène aux partenaires (i.e. autres sites que nous recommandons).
+			\item Un bouton pour s'inscrire/se connecter.
+			\item Un bouton "voir les inscrits".			
+			\item Un bouton "à propos".
+			\item Un bouton "contact".
+			\item Un bouton "outre-ça" pour revenir à l'accueil du site.
+			\item Un bouton "accueil gallerie" pour revenir à l'accueil de la galerie.
+		\end{enumerate}
+
+	\section{Contenu}
+		Je ferai sans doute une petite bannière (quand on clique dessus on retourne à l'accueil de la gallerie). En dessous de cette bannière, il y aura peut-ête écrit "Contenu réalisé par Oxylos" (puisque Tarran ne dessine pas), "Oxylos" étant un lien vers mon blog. La galerie comporte trois grande partie matérialisées 
+
+		\subsection{Accueil}
+			Quand on arrive sur la gallerie, on voit trois grandes images qui sont des liens vers les sous-parties de la gallerie :
+			\begin{enumerate}
+				\item Bandes dessinées.
+				\item Illustrations.
+				\item Croquis. 
+			\end{enumerate}
+
+			Quand on clique sur l'un des trois, on arrive dans une des trois branches de la gallerie.
+
+		\subsection{Branches}
+			Comme elles ne sont pas différentes, je regroupe tout dans le même paragraphe.
+
+			Le header est le même que sur la page d'accueil. Seulement, en dessous du header, il y a un deuxième header avec trois boutons : "bandes dessinées", "illustrations", et "croquis", pour pouvoir naviguer facilement d'une branche à l'autre.
+
+			La gallerie en elle-même est constituées d'icones organisées à peu près de la même façon que les galeries de Deviantart (exemple ici : \url{http://oxylos-neest.deviantart.com/gallery/}). Une petite différence : quand on fait passer le pointeur sur un élément de la galerie, nous avons le choix entre deux choses (cela se matérialise par l'apparition de deux boutons) : lire l'article du blog dans lequel je parle de cet élément pour pouvoir commenter, etc. (ce bouton est donc un lien vers l'article), ou bien activer directement le lecteur d'image.
+
+	\section{Lecteur de BD/images}
+		Le lecteur de BD/d'images est un programme qui a en entrée un ou plusieurs fichiers d'images. Quand on l'active, tout le reste du site s'assombrit, et la première image apparaît. Remarque : seules les suites d'images de la galerie peuvent apparaître dans le lecteur de BD/d'images.
+
+		\subsection{Côté utilisateur}
+			Côté utilisateur, voici les fonctions que je veux voir sur ce lecteur d'images :
+			\begin{enumerate}
+				\item Un zoom matérialisé par de discrets boutons + et - en bas de l'écran, mais qui peut aussi s'activer avec la molette de la souris, et aussi par les touches + et - du clavier. 
+				\item Déplacement au sein de l'image quand on a zoomé : le clic de la souris qui permet en quelque sorte "d'attraper" l'image. Il y a également des curseurs de défilement complètement à droite et complètement en bas de l'écran. Ces curseurs doivent être aussi discrets que possible, par exemple en ayant une couleur sombre tout comme le fond de l'image.
+				\item Remarque : le zoom et le déplacement peuvent être implémentés en même temps pour les écrans tactiles ou les trackpads des mac : on peut zoomer et se déplacer en touchant l'écran avec deux doigts.
+				\item Passage à l'image suivante, matérialisé par deux boutons à gauche et à droite de l'écran, mais aussi par les touches des flèches gauche et droite du clavier.
+				\item Quitter le lecteur d'images : un bouton en haut à gauche ou en haut à droite. Possible aussi en appuyant sur échappe ou encore en cliquant dans le noir, ailleurs que sur l'image.
+			\end{enumerate}
+			Remarque : quand la personne qui lit zoome beaucoup (et si l'image en question est assez grande pour le permettre), l'image remplit tout l'espace visuel du navigateur. Cela permet de donner une expérience de lecture inédite. 
+
+		\subsection{Côté auteur}
+			Quand je crée une suite d'images qui vont être lues par le lecteur de BD, il y a deux paramètres importants. D'abord, la taille de l'image, mais ça c'est moi qui le décide au moment même où j'enregistre mon image sur photoshop et quand j'upload. Mais ce que j'aimerais faire sur le lecteur, c'est choisir la taille apparente de l'image au moment où la personne qui lit arrive sur cette image. Par exemple, je peux vouloir uploader une grande image mais dont on peut saisir l'essentiel rapidement sans qu'elle ne prenne toute la place. Si la personne qui lit est intéressée, elle peut zoomer autant que le permet la taille de l'image.
+
+			Mais je vois déjà la question arriver : "Mais comment on fait pour créer une suite d'image lisible par le super-lecteur ?" Chaque image a forcément un article qui en parle. Donc je crée ces super-lectures au moment où j'écris mon article. Ainsi, dans l'interface où j'écris mon article, il y a un nouveau bouton : "créer une super-lecture". Là, je dois entrer plusieurs choses :
+			\begin{enumerate}
+				\item Le répertoire de la galerie dans lequel se trouve l'image (BD, illustration, ou croquis).
+				\item Un titre (celui qui apparaîtra sur la galerie).
+				\item Ma suite d'image (a priori autant que je veux). Au moment de valider l'upload une image, je choisis sa taille apparente au moment de son apparition ; cela peut par exemple se matérialiser par une simulation du lecteur, je déplace l'image comme je veux qu'elle apparaisse, et il y a un bouton en plus pour valider.
+				\item Une "image-résumé", qui apparaît sur l'article où je parle de la suite d'images. 
+			\end{enumerate}
+
+			Une fois que j'ai créé une suite d'images avec le super-lecteur dans un article, elle apparaît automatiquement dans la galerie.
+
+			J'en profite pour écrire une remarque importante. Dans mon blog, il y aura deux sortes d'images. D'abord, les images "normales" non intégrées dans la galeries, parce qu'elles n'ont aucun intérêt intrinsèques et ne peuvent qu'illustrer l'article. Mais je peux éventuellement transformer ces images en liens vers d'autres sites ou parties du site. Bref, c'est comme on faisait avant. Ensuite, il y a les "super-images" : il y a une image-résumé sur l'article du blog (ainsi que sur la galerie), et quand on clique dessus, le lecteur s'active. Visuellement, je pense qu'on pourrait mettre un petit cadre autour pour inviter les gens à cliquer dessus.
+
+\chapter{Les comptes}
+	Une partie importante qui mérite d'être plus développée que dans les versions précédentes des comptes. 
+	\section{Les grades des comptes}
+		Dans cette section, j'énumère par ordre décroissant d'importance les différents grades des comptes. Chaque grade de classe $n$ peut faire monter en grade tous les comptes de grade inférieur à $n$.
+		\subsection{L'administrateur}
+			L'administrateur est un compte unique. C'est le big boss, le patron, autrement dit, Guillaume. Comme c'est lui qui code tout le site, techniquement il peut faire absolument tout ce qu'il désire. C'est le dieu dans son site.
+
+		\subsection{Auteurs}
+			Les auteurs du site sont des demi-dieux. Ils seront au nombre de trois : Oxylos, Tarran, et dans un futur proche, Icare, qui va nous coder une interface de communication entre les comptes (ce logiciel sera développé dans le chapitre \ref{dialogue}). Les auteurs peuvent faire énormément de choses. Voici l'énumération de leur possibilités :
+			\begin{enumerate}
+				\item Créer, écrire, modifier et supprimer des articles de blog.
+				\item Modérer les commentaires, les comptes, bref, tout ce qui s'occupe de gérer la communauté des inscrits.
+				\item Écrire des commentaires, modifier ou supprimer tous les commentaires écrits.
+				\item Changer les bannières et les fonds des différentes pages du site.
+				\item Changer les polices d'écriture des titres etc. au sein de tout le site. 
+				\item Envoyer des mails aux inscrit ayant renseigné leur adresse mail. Donc, voire les mails des inscrits.
+				\item Envoyer des messages des inscrits, sur la boîte de messagerie interne du site.
+				\item Utiliser le logiciel de messagerie instantanée.
+			\end{enumerate}
+			Cette grande souplesse me permettra, si mon style graphique évolue trop, de pouvoir continuer à utiliser ce site sans que l'administrateur n'ait de travail supplémentaire à faire.
+
+		\subsection{Comptes d'élite}
+			Les comptes d'élite représentent, la plupart du temps, les amis des auteurs et de l'administrateur. Cela permet simplement à quelques personnes sélectionnées d'utiliser le logiciel de discussion instantannée pour ne pas avoir à subir les horreurs absolues que sont skype, fassebouque, etc., ni sans se faire espionner. Voici ce que peuvent faire les comptes d'élite :
+			\begin{enumerate}
+				\item Écrire des commentaires, modifier ou supprimer tous les commentaires écrits. Ainsi, les comptes d'élite peuvent aider les auteurs dans la modération. 
+				\item Envoyer des mails aux inscrit ayant renseigné leur adresse mail. Donc, voire les mails des inscrits.
+				\item Envoyer des messages des inscrits, sur la boîte de messagerie interne du site.
+				\item Utiliser le logiciel de messagerie instantanée.
+			\end{enumerate}
+			Les comptes d'élite sont donc forcément des personnes de confiance.
+
+		\subsection{Le compte de base}
+			Le compte que tout le monde peut avoir en indiquant un pseudo et en choisissant un mot de passe. En voici les possibilités :
+			\begin{enumerate}
+				\item Écrire des commentaires. Modifier ou supprimer ses propres commentaires.
+				\item Envoyer des messages des inscrits, sur la boîte de messagerie interne du site. 
+			\end{enumerate}
+
+
+	\section{L'interface des comptes}
+		Pour le moment je n'ai pas encore décrit ce qui se passait quand on cliquait sur "voir les inscrits" dans le header. Il y a une liste des comptes des inscrits ; on peut voir le profil de chacun en cliquant sur son pseudo. Les comptes sont séparés par grade. Tout en haut, il y a l'administrateur. En dessous, les auteurs. Encore en dessous, les comptes d'élite. Et tout en bas, les comptes ordinaires.
+		On peut mettre ça sous forme d'un tableau où on dit quand même quelques informations sur chaque compte dans la liste... j'y réfléchirai plus tard. 
+
+		\subsection{Accès aux pages de profil}
+			Il y a deux façons et demi d'accéder à la page de profil d'un inscrit. La première façon, c'est en passant par le bouton du header "voir les inscrits" et de cliquer sur le profil. La deuxième façon, c'est qu'à chaque fois qu'un inscrit fait quelque chose (commentaire, article, super-suite d'immage lue par le super-lecteur, etc.), son nom est écrit à côté de ce qu'il fait. Il suffit alors de cliquer dessus pour voir son profil. La demi façon restante est que, lorsque vous êtes connecté, dans le header, à la place du bouton "se connecter/s'inscrire", il y a un bouton qui porte le nom du pseudo du connecté. En cliquant dessus, la personne connectée accède à sa page de profil qu'il peut modifier.
+
+		\subsection{Page de profil vue de l'extérieur ou par un compte ordinaire}
+			\begin{enumerate}
+				\item Pseudo.
+				\item Image de profil, ou avatar.
+				\item Bouton pour le contacter sur sa messagerie interne du site.
+				\item Un unique article type article de blog où l'inscrit parle de lui.
+				\item Historique de son activités : commentaires écrits, articles écrits, super-suite d'images (lisibles par le super-lecteur) créées. En cliquant dessus on arrive directement sur l'objet en question.
+				\item Un bouton "retour à la liste des profils".
+			\end{enumerate}
+
+		\subsection{Profil vu par soi-même lorsque l'on est connecté}
+			\begin{enumerate}
+				\item Tout ce qu'il y a dans la section précédente, mais avec un petit bouton "modifier" en plus s'il y a déjà du contenu, "ajouter" sinon.
+				\item Un bouton pour accéder à ses messages sur la messagerie interne du site.
+				\item Possibilité de modifier, en quelque sorte, "l'article" où l'inscrit parle de lui : il peut en profiter pour mettre des liens vers ses différents sites, ainsi que dire quelques mots sur lui. En revanche, impossible de créer une super-suite d'images visible dans la galerie.
+				\item Un bouton pour accéder au logiciel de messagerie instantannée. Disponible que pour les modérateurs et classes supérieures.
+			\end{enumerate}
+
+		\subsection{Profil vu par les modérateurs, les auteurs ou l'administrateur}
+			\begin{enumerate}
+				\item Tout ce qu'il y a dans la section précédente. Les modérateurs peuvent vraiment tout faire, y compris regarder la messagerie interne au site des membres ! Mais ils utilisent leur pouvoir avec parcimonie.
+				\item Un bouton "supprimer le profil". Valable uniquement sur les profils de rang inférieurs à soi.
+				\item Bouton "promotion" : permet de faire monter en grade un profil. Les règles sont les suivantes : l'administrateur a tous les droits, les auteurs nomment les modérateurs. Mais ils peuvent aussi retirer un modérateur (ou un auteur pour l'admin) de ses fonctions. 
+			\end{enumerate}
+
+		\subsection{Messagerie}
+			Il me semble que la messagerie de l'ancien site n'était pas si dégueulasse que ça. On pourrait simplement ajouter quelques fonctionnalités : un bouton "répondre" pour les comptes ordinaires, un bouton "répondre par mail" (si l'utilisateur a renseigné son mail) pour les modérateurs et plus. 
+
+	\section{Informations moins importantes}
+
+		Dans toute la partie concernant les profils, le header ne change pas drastiquement :
+		\begin{enumerate}
+			\item Un bouton qui mène aux partenaires (i.e. autres sites que nous recommandons).
+			\item Un bouton pour s'inscrire/se connecter.
+			\item Un bouton "voir les inscrits".			
+			\item Un bouton "à propos".
+			\item Un bouton "contact".
+			\item Un bouton "outre-ça" pour revenir à l'accueil du site.
+		\end{enumerate}
+
+		Le footer est le même que celui de la page d'accueil.
+
+\chapter{La page des liens}
+	Ce que tu avais fait dans l'ancien Outre-Ça était presque parfait. J'ai juste envie d'en modifier un peu le design, mais dans le fond j'en suis déjà assez satisfait.
+
+\chapter{Archives}
+	Y'a deux sortes d'archives. Le vieux site, et les futures archives du nouveau site.
+	\section{Le vieux site}
+		On accède au vieux site par le bouton du header de la page d'accueil. En cliquant sur ce bouton, le site se présente exactement tel qu'il existait avant, à deux détails près. 
+		\begin{enumerate}
+			\item Sur tout le bord de l'écran, il y aura une sorte de texture de toile d'araignée.
+			\item Dans le header, il y aura un bouton en plus : "retour vers le site actuel" ou quelque chose comme ça. 
+		\end{enumerate}
+
+	\section{Les archives actuelles}
+		On y accède par un bouton du header interne à chaque blog. Les archives d'un blog donné ne donnent accès qu'aux articles que l'auteur en question a écrites. Les archives se présentent sous une forme de liste chronologique. Les archives du blog de Boulet (\url{http://bouletcorp.com}) sont ce qui se rapproche le plus de ce que je veux. 
+
+		Le header ne change pas beaucoup :
+		\begin{enumerate}
+			\item Un bouton qui mène aux partenaires (i.e. autres sites que nous recommandons).
+			\item Un bouton pour s'inscrire/se connecter.
+			\item Un bouton "voir les inscrits".			
+			\item Un bouton "à propos".
+			\item Un bouton "contact".
+			\item Un bouton "outre-ça" pour revenir à l'accueil du site.
+			\item Retour au blog fait quitter les archives et revenir au blog.
+		\end{enumerate}
+
+		Le footer est le même que sur les blogs.
+
+
+\chapter{Logiciel de dialogue instantané} \label{dialogue}
+	\emph{À rédiger en collaboration avec Laurent\ldots}
+
+
+\end{document}
+
+
