@@ -4,18 +4,6 @@ L'Outre-Ça
 Requirement
 -----------
 
-Install
-- PHP 5
-- MySQL
-- libxml
-- php-intl (not mandatory)
-- APC
-- mbstring
-- php-xml
-- java
-
-via your package manager.
-
 Install [less with node via npm](https://www.npmjs.com/package/less).
 
 Run
@@ -54,7 +42,7 @@ composer install
 Install [yui_compressor_2.4.8](https://github.com/yui/yuicompressor/releases) and [closure-compiler](https://github.com/google/closure-compiler) at **app/Resources/java/**
 
 ```sh
-php app/console mopa:boostrap:install:font
+php app/console mopa:bootstrap:install:font
 ```
 
 Dump the assets.
@@ -68,7 +56,7 @@ php app/console doctrine:database:create
 php app/console doctrine:schema:create
 ```
 
-To finish, [register](http://127.0.0.1:8000/config.php) to the blog and promote your account with ROLE_AUTHOR and ROLE_ADMIN.
+To finish, [register](http://127.0.0.1:8000/register) to the blog and promote your account with ROLE_AUTHOR and ROLE_ADMIN.
 
 ```sh
 php app/console fos:user:promote $username$

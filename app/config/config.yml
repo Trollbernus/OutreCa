@@ -44,8 +44,8 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ "MopaBootstrapBundle", "BlogBlogBundle", "FOSCommentBundle" ]
-    #java: /usr/bin/java
+    bundles:        [ "MopaBootstrapBundle", "BlogBlogBundle", "FOSCommentBundle", "BernusDesignBundle" ]
+    java: /usr/bin/java
     filters:
         cssrewrite: ~
         less:
@@ -63,6 +63,7 @@ assetic:
             inputs:
                 - %kernel.root_dir%/../vendor/jquery/jquery-1.11.3.js
             output: js/jquery.js
+
 # Doctrine Configuration
 doctrine:
     dbal:

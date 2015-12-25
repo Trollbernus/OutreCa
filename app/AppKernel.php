@@ -31,6 +31,7 @@ class AppKernel extends Kernel
             new Blog\UserBundle\BlogUserBundle(),
             new Blog\BlogBundle\BlogBlogBundle(),
             new Blog\CommentBundle\BlogCommentBundle(),
+            new Bernus\DesignBundle\BernusDesignBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

@@ -1,3 +1,7 @@
+bernus_design:
+    resource: "@BernusDesignBundle/Resources/config/routing.yml"
+    prefix:   /
+
 # Blog
 
 # BlogBlogBundle
