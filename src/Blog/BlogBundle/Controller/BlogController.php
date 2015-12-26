@@ -81,7 +81,8 @@ class BlogController extends Controller
             }
 
             return $this->render('BlogBlogBundle:Blog:show.html.twig', array(
-                'article' => $article
+                'article' => $article,
+                'author' => $author
             ));
         }
     }
@@ -126,7 +127,8 @@ class BlogController extends Controller
         return $this->render('BlogBlogBundle:Blog:edit.html.twig', array(
             'form' => $form->createView(),
             'id' => $article->getId(),
-            'publicationDate' => $article->getPublicationDate()
+            'publicationDate' => $article->getPublicationDate(),
+            'author' => $article->getAuthor()
         ));
     }
 
@@ -166,7 +168,8 @@ class BlogController extends Controller
 
         return $this->render('BlogBlogBundle:Blog:delete.html.twig', array(
             'form' => $form->createView(),
-            'article' => $article
+            'article' => $article,
+            'author' => $this->getUser()
         ));
     }
 }

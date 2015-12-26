@@ -9,14 +9,18 @@
     {{ flash('danger', error.messageKey|trans(error.messageData, 'security')) }}
 {% endif %}
 
+<div class="col-md-7 col-md-offset-1">
 {{ form_start(form) }}
 
     {{ form_errors(form) }}
     {{ form_widget(form) }}
-    <button type="submit" class="btn btn-primary">{{ 'security.login.submit'|trans }}</button>
+    <button type="submit" class="btn btn-primary pull-right">{{ 'security.login.submit'|trans }}</button>
 
 {{ form_end(form) }}
+</div>
 
+<div class="col-md-offset-2 col-md-2">
 {{ render(url('hwi_oauth_connect')) }}
+</div>
 
 {% endblock fos_user_content %}

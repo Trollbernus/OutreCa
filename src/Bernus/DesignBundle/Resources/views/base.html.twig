@@ -3,10 +3,32 @@
 {% block head_style %}
     {% stylesheets
         '@MopaBootstrapBundle/Resources/public/less/mopabootstrapbundle.less'
-        '@BernusDesignBundle/Resources/less/*'
+        '@BernusDesignBundle/Resources/less/global.less'
         filter='yui_css'
         output='css/design.css'
     %}
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
     {% endstylesheets %}
+
+    {% if author is defined %}
+        {% if author == "Oxylos" %}
+            {% stylesheets
+                '@BernusDesignBundle/Resources/less/Oxylos.less'
+                filter='yui_css'
+                output='css/Oxylos.css'
+            %}
+            <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+            {% endstylesheets %}
+        {% endif %}
+
+        {% if author == "Tarran" %}
+            {% stylesheets
+                '@BernusDesignBundle/Resources/less/Tarran.less'
+                filter='yui_css'
+                output='css/Tarran.css'
+            %}
+            <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
+            {% endstylesheets %}
+        {% endif %}
+    {% endif %}
 {% endblock head_style %}
