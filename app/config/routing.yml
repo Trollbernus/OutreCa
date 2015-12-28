@@ -1,3 +1,7 @@
+mastio_photo_swipe:
+    resource: "@MastioPhotoSwipeBundle/Resources/config/routing.yml"
+    prefix:   /
+
 bernus_design:
     resource: "@BernusDesignBundle/Resources/config/routing.yml"
     prefix:   /

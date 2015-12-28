@@ -32,6 +32,7 @@ class AppKernel extends Kernel
             new Blog\BlogBundle\BlogBlogBundle(),
             new Blog\CommentBundle\BlogCommentBundle(),
             new Bernus\DesignBundle\BernusDesignBundle(),
+            new Mastio\PhotoSwipeBundle\MastioPhotoSwipeBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

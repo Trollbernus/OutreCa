@@ -44,14 +44,18 @@ twig:
 assetic:
     debug:          "%kernel.debug%"
     use_controller: false
-    bundles:        [ "MopaBootstrapBundle", "BlogBlogBundle", "FOSCommentBundle", "BernusDesignBundle" ]
+    bundles:        [ "MopaBootstrapBundle", "BlogBlogBundle", "FOSCommentBundle", "BernusDesignBundle", "MastioPhotoSwipeBundle" ]
     java: /usr/bin/java
+    ruby: /usr/bin/ruby
     filters:
         cssrewrite: ~
         less:
             node: /usr/bin/node
             node_paths: [/usr/lib/node_modules]
             apply_to: "\.less$"
+        sass:
+            bin: /usr/local/bin/sass
+            #apply_to: "\.(scss|sass)$"
         yui_css:
             jar: "%kernel.root_dir%/Resources/java/yuicompressor-2.4.8.jar"
         yui_js:

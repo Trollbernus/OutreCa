@@ -61,3 +61,8 @@ To finish, [register](http://127.0.0.1:8000/register) to the blog and promote yo
 ```sh
 php app/console fos:user:promote $username$
 ```
+
+Uploads
+-------
+
+Create the folder 'web/uploads'.

@@ -26,14 +26,15 @@
         "hwi/oauth-bundle": "0.4.*@dev",
         "mopa/bootstrap-bundle": "dev-master",
         "twbs/bootstrap": "dev-master",
-        "twbs/bootstrap-sass": "dev-master",
+        "twbs/bootstrap-sass": "~3.3.0",
         "knplabs/knp-paginator-bundle": "dev-master",
         "knplabs/knp-menu-bundle": "dev-master",
         "knplabs/knp-menu": "~2.1",
         "craue/formflow-bundle": "~2.0",
         "liip/imagine-bundle": "dev-master",
         "Trsteel/ckeditor-bundle": "dev-master",
-        "helios-ag/fm-elfinder-bundle": "~5"
+        "helios-ag/fm-elfinder-bundle": "~5",
+        "dimsemenov/PhotoSwipe": "4.1.1"
     },
     "require-dev": {
         "sensio/generator-bundle": "~2.3"
@@ -47,6 +48,18 @@
                 "dist": {
                     "url": "http://code.jquery.com/jquery-1.11.3.js",
                     "type": "file"
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "dimsemenov/PhotoSwipe",
+                "version": "4.1.1",
+                "source": {
+                    "url": "https://github.com/dimsemenov/PhotoSwipe",
+                    "type": "git",
+                    "reference": "master"
                 }
             }
         }
@@ -63,7 +76,8 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-            "Mopa\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::postInstallSymlinkTwitterBootstrap"
+            "Mopa\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::postInstallSymlinkTwitterBootstrap",
+            "Mopa\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::postInstallSymlinkTwitterBootstrapSass"
         ],
         "post-update-cmd": [
             "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
@@ -73,7 +87,8 @@
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::removeSymfonyStandardFiles",
             "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget",
-            "Mopa\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::postInstallSymlinkTwitterBootstrap"
+            "Mopa\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::postInstallSymlinkTwitterBootstrap",
+            "Mopa\\Bundle\\BootstrapBundle\\Composer\\ScriptHandler::postInstallSymlinkTwitterBootstrapSass"
         ]
     },
     "config": {

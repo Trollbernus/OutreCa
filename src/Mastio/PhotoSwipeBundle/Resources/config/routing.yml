@@ -1,0 +1,3 @@
+mastio_photo_swipe_homepage:
+    path:     /PhotoSwipe/test
+    defaults: { _controller: MastioPhotoSwipeBundle:Default:index }
