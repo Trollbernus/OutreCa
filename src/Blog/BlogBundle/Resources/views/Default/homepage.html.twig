@@ -1,10 +1,63 @@
-{% extends 'BlogBlogBundle::layout.html.twig' %}
+{% extends 'BernusDesignBundle::base.html.twig' %}
 
-{% block content_row %}
-<div class="row">
-    <a href="{{ path('blog', { 'author': "Dora", 'page': 1 }) }}">
-         <div class="col-md-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, ut, aspernatur, mollitia, consectetur doloremque quam consequatur nam dolore labore inventore quis earum numquam aut assumenda veniam blanditiis ullam accusantium debitis.</div>
-    </a>
-    <div class="col-md-6">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab, quisquam pariatur deleniti reprehenderit voluptates consequuntur rerum vel corporis minus fugiat dolores ea repellendus consectetur mollitia fuga a aliquam amet eos.</div>
+{% block title %}L'Outre-Ça{% endblock title %}
+
+{% block head_style %}
+    {{ parent() }}
+     <style>
+        body {
+            background-color: #111111;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        .row div {
+            text-align: center;
+        }
+    </style>
+{% endblock head_style %}
+
+{% block container %}
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-6">
+            <a href="{{ path('blog', { 'author': "Oxylos", 'page': 1 }) }}">
+                {% image '@BernusDesignBundle/Resources/images/homepage_Oxylos.png' %}
+                    <img src="{{ asset_url }}" alt="Oxylos" height="200px">
+                {% endimage %}
+        </a>
+        </div>
+        <div class="col-md-6">
+            <a href="{{ path('blog', { 'author': "Tarran", 'page': 1 }) }}">
+                {% image '@BernusDesignBundle/Resources/images/homepage_Tarran.png' %}
+                    <img src="{{ asset_url }}" alt="Tarran" height="200px">
+                {% endimage %}
+            </a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            {% image '@BernusDesignBundle/Resources/images/homepage_title.png' %}
+                <img src="{{ asset_url }}" alt="Tarran" height="400px">
+            {% endimage %}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <a href="{{ path('blog', { 'author': "Dora", 'page': 1 }) }}">
+                {% image '@BernusDesignBundle/Resources/images/homepage_community.png' %}
+                    <img src="{{ asset_url }}" alt="Communauté" height="200px">
+                {% endimage %}
+            </a>
+        </div>
+        <div class="col-md-6">
+            <a href="{{ path('about') }}">
+                {% image '@BernusDesignBundle/Resources/images/homepage_about.png' %}
+                    <img src="{{ asset_url }}" alt="À propos" height="200px">
+                {% endimage %}
+            </a>
+        </div>
+    </div>
 </div>
-{% endblock content_row %}
+{% endblock container %}

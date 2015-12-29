@@ -4,7 +4,8 @@
     {% stylesheets
         '@MopaBootstrapBundle/Resources/public/less/mopabootstrapbundle.less'
         '@BernusDesignBundle/Resources/less/global.less'
-        filter='yui_css'
+        '@BernusDesignBundle/Resources/less/border.less'
+        filter='less,yui_css,cssrewrite'
         output='css/design.css'
     %}
     <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />

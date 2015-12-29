@@ -1,0 +1,86 @@
+// var
+@path_to_img: '/bundles/bernusdesign/images/border/';
+@top_height: 191px;
+@left_width: 157px;
+@bottom_height: 144px;
+@right_width: 166px;
+
+// function
+.background(@filename, @repeat: no-repeat, @position: top left) {
+    background-image: url('@{path_to_img}@{filename}.png');
+    z-index: -1;
+}
+
+.background(@filename, @repeat, @position: top left) {
+    background-repeat: @repeat;
+}
+
+.background(@filename, @repeat, @position) {
+    background-position: @position;
+}
+
+// content
+.top {
+    margin-top: 20px;
+    height: @top_height;
+    overflow: hidden;
+    .left {
+        float: left;
+        width: @left_width;
+        height: @top_height;
+        .background('tl');
+    }
+    .center {
+        margin-left: @left_width;
+        margin-right: @right_width;
+        width: auto;
+        height: @top_height;
+        .background('t', repeat-x);
+    }
+    .right {
+        float: right;
+        width: @right_width;
+        height: @top_height;
+        .background('tr');
+    }
+}
+
+.center {
+    .left {
+        .background('l', repeat-y, left);
+    }
+    .center {
+        margin: -120px 80px -95px 70px;
+        background-color: #fff;
+        overflow: hidden;
+    }
+    .right {
+        .background('r', repeat-y, right);
+    }
+}
+
+.bottom {
+    overflow: hidden;
+    margin-bottom: 20px;
+    height: @bottom_height;
+    .left {
+        float: left;
+        width: @left_width;
+        height: @bottom_height;
+        position: absolute;
+        .background('bl');
+    }
+    .center {
+        width: auto;
+        height: @bottom_height;
+        margin-left: @left_width;
+        margin-right: @right_width;
+        .background('b', repeat-x);
+    }
+    .right {
+        float: right;
+        width: @right_width;
+        height: @bottom_height;
+        .background('br');
+    }
+}

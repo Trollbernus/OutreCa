@@ -12,4 +12,7 @@ Blog\CommentBundle\Entity\Comment:
             targetEntity: Thread
         author:
             targetEntity: Blog\UserBundle\Entity\User
+    properties:
+        author:
+            - NotBlank: ~
     lifecycleCallbacks: { }

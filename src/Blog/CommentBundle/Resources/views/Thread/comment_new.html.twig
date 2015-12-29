@@ -9,4 +9,18 @@
 
 #}
 
-{% include "FOSCommentBundle:Thread:comment_new_content.html.twig" %}
+{% if app.user %}
+
+    {% include "FOSCommentBundle:Thread:comment_new_content.html.twig" %}
+
+{% else %}
+
+    <div class="fos_comment_comment_form_holder">
+        <p>Il faut être inscrit pour pouvoir poster un commentaire</p>
+        <p>
+            <a href="{{ path('fos_user_security_login') }}">Connexion</a> /
+            <a href="{{ path('fos_user_registration_register') }}">Inscription</a>
+        </p>
+    </div>
+
+{% endif %}

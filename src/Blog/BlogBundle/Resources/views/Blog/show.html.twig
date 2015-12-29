@@ -9,6 +9,9 @@
 
 
 {% block content %}
+
+{% embed "BernusDesignBundle::border.html.twig" %}
+{% block border_content %}
 <div class="article">
 
     <header>
@@ -24,9 +27,11 @@
 
     <div class="content">{{ article.content|raw('html') }}</div>
 
-    <div id="fos_comment_thread"></div>
-
 </div>
+{% endblock border_content %}
+{% endembed %}
+
+<div id="fos_comment_thread"></div>
 {% endblock %}
 
 {% block foot_script %}
