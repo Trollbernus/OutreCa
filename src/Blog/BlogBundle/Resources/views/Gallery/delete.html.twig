@@ -1,0 +1,16 @@
+{% extends 'BlogBlogBundle::layout.html.twig' %}
+
+{% block content %}
+<div class="well">
+    <div class="prettyprint">
+        <form method="post" {{ form_enctype(form) }}>
+            {{ form_widget(form) }}
+
+            <div class="btn-group">
+                <a href="{{ path('gallery_display', {'id': id}) }}" class="btn btn-primary">Annuler</a>
+                <button type="submit" class="btn btn-danger">Supprimer</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock %}

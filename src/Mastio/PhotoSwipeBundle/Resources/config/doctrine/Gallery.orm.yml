@@ -1,0 +1,14 @@
+Mastio\PhotoSwipeBundle\Entity\Gallery:
+    type: entity
+    table: photoswipe_gallery
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    oneToMany:
+        images:
+            targetEntity: Mastio\PhotoSwipeBundle\Entity\Image
+            mappedBy: gallery
+    lifecycleCallbacks: {  }

@@ -41,3 +41,26 @@ blog_delete:
     defaults: { _controller: BlogBlogBundle:Blog:delete }
     requirements:
         id: \d+
+
+# Gallery
+gallery_display:
+    path: /gallery/{id}
+    defaults: { _controller: BlogBlogBundle:Gallery:display, id: 0 }
+    requirements:
+        id: \d+
+
+gallery_create:
+    path: /author/gallery/create
+    defaults: { _controller: BlogBlogBundle:Gallery:edit, id: 0 }
+
+gallery_edit:
+    path: /author/gallery/edit/{id}
+    defaults: { _controller: BlogBlogBundle:Gallery:edit }
+    requirements:
+        id: \d+
+
+gallery_delete:
+    path: /author/gallery/delete/{id}
+    defaults: { _controller: BlogBlogBundle:Gallery:delete }
+    requirements:
+        id: \d+

@@ -45,9 +45,12 @@ Install [yui_compressor_2.4.8](https://github.com/yui/yuicompressor/releases) an
 php app/console mopa:bootstrap:install:font
 ```
 
-Dump the assets.
+Delete the mopabootstrap sass file.
+
+Dump and install the assets.
 ```sh
 php app/console assetic:dump
+php app/console assets:install
 ```
 
 Generate the database.

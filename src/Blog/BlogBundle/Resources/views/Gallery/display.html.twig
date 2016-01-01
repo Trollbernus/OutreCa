@@ -1,0 +1,28 @@
+{% extends 'BlogBlogBundle::layout.html.twig' %}
+
+{% block content %}
+
+<button id="btn">Open PhotoSwipe</button>
+
+{% include 'MastioPhotoSwipeBundle::element.html.twig' %}
+{% include 'MastioPhotoSwipeBundle::loader.html.twig' %}
+
+<script type="text/javascript">
+document.getElementById('btn').onclick = openPhotoSwipe;
+</script>
+
+<span class="btn-group">
+    <a href="{{ path('gallery_create') }}" class="btn btn-primary">Ajouter</a>
+    <a href="{{ path('gallery_edit', {'id': id }) }}" class="btn btn-warning">Modifier</a>
+    <a href="{{ path('gallery_delete', {'id': id }) }}" class="btn btn-danger">Supprimer</a>
+</span>
+
+{% endblock content %}
+
+
+{% block foot_script %}
+{{ parent() }}
+{% javascripts '@MopaBootstrapBundle/Resources/public/js/mopabootstrap-collection.js' %}
+<script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% endblock foot_script %}

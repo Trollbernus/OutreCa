@@ -1,0 +1,35 @@
+Mastio\PhotoSwipeBundle\Entity\Image:
+    type: entity
+    table: photoswipe_image
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        url:
+            type: string
+            length: 255
+        height:
+            type: integer
+            nullable: true
+        width:
+            type: integer
+            nullable: true
+        previewHeight:
+            type: integer
+            column: preview_height
+            nullable: true
+        previewWidth:
+            type: integer
+            column: preview_width
+            nullable: true
+    manyToOne:
+        gallery:
+            targetEntity: Mastio\PhotoSwipeBundle\Entity\Gallery
+            inversedBy: images
+            joinColumn:
+                name: gallery_id
+                referencedColumnName: id
+    lifecycleCallbacks: {  }

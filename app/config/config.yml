@@ -168,6 +168,12 @@ mopa_bootstrap:
         show_legend: false
         render_optional_text: false
         checkbox_label: 'label'
+        collection:
+            widget_remove_btn:
+                icon: trash
+                icon_inverted: true
+            widget_add_btn:
+                icon: plus-sign
     initializr:
         meta:
             title:        "L'Outre-Ça"
@@ -218,6 +224,20 @@ fm_elfinder:
                 roots:       # at least one root must be defined
                     uploads:
                         show_hidden: false # defaults to false
+                        driver: LocalFileSystem
+                        path: uploads
+                        upload_allow: ['image/png', 'image/jpg', 'image/jpeg']
+                        upload_deny: ['all']
+                        upload_max_size: 2M
+        form:
+            locale: %locale% # defaults to current request locale
+            editor: form # other choices are tinymce or simple, and form
+            fullscreen: true # defaults true, applies to simple and ckeditor editors
+            include_assets: true # disable if you want to handle loading of the javascript and css assets yourself
+            connector:
+                debug: false # defaults to false
+                roots:       # at least one root must be defined
+                    uploads:
                         driver: LocalFileSystem
                         path: uploads
                         upload_allow: ['image/png', 'image/jpg', 'image/jpeg']

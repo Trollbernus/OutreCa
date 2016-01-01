@@ -78,6 +78,7 @@ class BlogController extends Controller
             }
             if ($article->getPublicationDate() > new \Datetime()) {
                 $this->get('session')->getFlashBag()->add('info', 'L\'article n\'a pas encore été publié');
+                // ne pas afficher l'article si on n'est pas un auteur
             }
 
             return $this->render('BlogBlogBundle:Blog:show.html.twig', array(
@@ -119,7 +120,6 @@ class BlogController extends Controller
                 )));
             }
             else {
-                echo($form->getData()->getPublicationDate()->format('c'));
                 throw $this->createNotFoundException('Formulaire invalide');
             }
         }
@@ -157,7 +157,7 @@ class BlogController extends Controller
                     )));
                 }
                 else {
-                    return $this->redirect($this->generateUrl('show', array(
+                    return $this->redirect($this->generateUrl('blog_show', array(
                         'author' => $this->getUser(),
                         'id' => $article->getId(),
                         'title' => $article->getTitle()

@@ -1,0 +1,21 @@
+{% extends 'BlogBlogBundle::layout.html.twig' %}
+
+{% block content %}
+
+{{ form_start(form) }}
+
+    {{ form_errors(form) }}
+    {{ form_widget(form) }}
+    <button type="submit" class="btn btn-primary pull-right">{% if id is empty %}Ajouter la galerie{% else %}Modifier la galerie{% endif %}</button>
+
+{{ form_end(form) }}
+
+{% endblock content %}
+
+
+{% block foot_script %}
+{{ parent() }}
+{% javascripts '@MopaBootstrapBundle/Resources/public/js/mopabootstrap-collection.js' %}
+<script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% endblock foot_script %}

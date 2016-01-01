@@ -58,6 +58,6 @@ class ArticleType extends AbstractType
 
     public function getName()
     {
-        return 'mastio_blogbundle_articletype';
+        return 'blog_blogbundle_articletype';
     }
 }
