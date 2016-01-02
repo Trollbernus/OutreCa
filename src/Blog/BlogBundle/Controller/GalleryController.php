@@ -13,15 +13,25 @@ class GalleryController extends Controller
     public function displayAction($id)
     {
         $repo = $this->getDoctrine()->getManager()->getRepository('MastioPhotoSwipeBundle:Gallery');
-        $gallery = $repo->findOneById($id);
-        if (!$gallery) {
-            throw $this->createNotFoundException('Galerie[id='.$id.'] inexistant');
-        }
 
-        return $this->render('BlogBlogBundle:Gallery:display.html.twig', array(
-            'images' => $gallery->getImages(),
-            'id' => $gallery->getId()
-        ));
+        if ($id == 0) {
+            $galleries = $repo->findBy(array(), array('id' => 'DESC'));
+
+            return $this->render('BlogBlogBundle:Gallery:view.html.twig', array(
+                'galleries' => $galleries
+            ));
+        }
+        else {
+            $gallery = $repo->findOneById($id);
+            if (!$gallery) {
+                throw $this->createNotFoundException('Galerie[id='.$id.'] inexistant');
+            }
+
+            return $this->render('BlogBlogBundle:Gallery:display.html.twig', array(
+                'images' => $gallery->getImages(),
+                'id' => $gallery->getId()
+            ));
+        }
     }
 
     public function editAction($id)

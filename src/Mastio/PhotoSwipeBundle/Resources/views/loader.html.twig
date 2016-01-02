@@ -18,7 +18,9 @@
     <script src="{{ asset_url }}" type="text/javascript"></script>
 {% endjavascripts %}
 
+
 <script type="text/javascript">
+{% block photoswipe_script %}
 var openPhotoSwipe = function() {
     var pswpElement = document.querySelectorAll('.pswp')[0];
     var items = [
@@ -45,10 +47,7 @@ var openPhotoSwipe = function() {
     var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items, options);
     gallery.init();
 };
-
-//openPhotoSwipe();
-
-//document.getElementById('btn').onclick = openPhotoSwipe;
+{% endblock photoswipe_script %}
 </script>
 
 

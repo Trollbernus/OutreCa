@@ -1,0 +1,47 @@
+{% extends 'BlogBlogBundle::layout.html.twig' %}
+
+{% block content %}
+
+{% for gallery in galleries %}
+<h2>Gallery {{ gallery.id }}</h2>
+<div class="col-md-12" id="gallery_{{ gallery.id }}">
+    {% for image in gallery.images %}
+    <img src="{{ image.url }}" alt="Image {{ image.id }}" width="200px" />
+    {% endfor %}
+</div>
+{% endfor %}
+
+{% include 'MastioPhotoSwipeBundle::element.html.twig' %}
+{% embed 'MastioPhotoSwipeBundle::loader.html.twig' %}
+{% block photoswipe_script %}
+
+var pswpElement = document.querySelectorAll('.pswp')[0];
+{% for gallery in galleries %}
+document.getElementById('gallery_{{ gallery.id }}').onclick = function() {
+    var items = [
+    {% for image in gallery.images %}
+        {
+            src: '{{ image.url }}',
+            w: {{ image.width }},
+            h: {{ image.height }}
+        },
+    {% endfor %}
+    ];
+
+    var gallery = new PhotoSwipe( pswpElement, PhotoSwipeUI_Default, items);
+    gallery.init();
+};
+{% endfor %}
+
+
+{% endblock photoswipe_script %}
+{% endembed %}
+
+{% endblock %}
+
+{% block foot_script %}
+{{ parent() }}
+{% javascripts '@MopaBootstrapBundle/Resources/public/js/mopabootstrap-collection.js' %}
+<script type="text/javascript" src="{{ asset_url }}"></script>
+{% endjavascripts %}
+{% endblock foot_script %}

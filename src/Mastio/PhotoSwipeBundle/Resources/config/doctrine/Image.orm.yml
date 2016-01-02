@@ -13,10 +13,8 @@ Mastio\PhotoSwipeBundle\Entity\Image:
             length: 255
         height:
             type: integer
-            nullable: true
         width:
             type: integer
-            nullable: true
         previewHeight:
             type: integer
             column: preview_height
