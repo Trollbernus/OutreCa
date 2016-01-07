@@ -13,6 +13,9 @@
         .row div {
             text-align: center;
         }
+        .row .col-md-6 {
+            height: 250px;
+        }
     </style>
 {% endblock head_style %}
 
@@ -21,43 +24,44 @@
     <div class="row">
         <div class="col-md-6">
             <a href="{{ path('blog', { 'author': "Oxylos", 'page': 1 }) }}">
-                {% image '@BernusDesignBundle/Resources/images/homepage_Oxylos.png' %}
-                    <img src="{{ asset_url }}" alt="Oxylos" height="200px">
-                {% endimage %}
+                <img src="/bundles/bernusdesign/images/banner/Oxylos.png" alt="Oxylos" height="200px">
         </a>
         </div>
         <div class="col-md-6">
             <a href="{{ path('blog', { 'author': "Tarran", 'page': 1 }) }}">
-                {% image '@BernusDesignBundle/Resources/images/homepage_Tarran.png' %}
-                    <img src="{{ asset_url }}" alt="Tarran" height="200px">
-                {% endimage %}
+                <img src="/bundles/bernusdesign/images/banner/Tarran.png" alt="Tarran" height="200px">
             </a>
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-12">
-            {% image '@BernusDesignBundle/Resources/images/homepage_title.png' %}
-                <img src="{{ asset_url }}" alt="Tarran" height="400px">
-            {% endimage %}
+            <img src="/bundles/bernusdesign/images/banner/Outre_Ca.png" alt="Tarran" height="400px">
         </div>
     </div>
 
     <div class="row">
         <div class="col-md-6">
             <a href="{{ path('blog', { 'author': "Dora", 'page': 1 }) }}">
-                {% image '@BernusDesignBundle/Resources/images/homepage_community.png' %}
-                    <img src="{{ asset_url }}" alt="Communauté" height="200px">
-                {% endimage %}
+                <img src="/bundles/bernusdesign/images/logo/community.png" alt="Communauté" height="200px">
             </a>
         </div>
         <div class="col-md-6">
             <a href="{{ path('about') }}">
-                {% image '@BernusDesignBundle/Resources/images/homepage_about.png' %}
-                    <img src="{{ asset_url }}" alt="À propos" height="200px">
-                {% endimage %}
+                <img src="/bundles/bernusdesign/images/logo/about.png" alt="À propos" height="200px">
             </a>
         </div>
     </div>
 </div>
 {% endblock container %}
+
+{% block foot_script %}
+{{ parent() }}
+<script type="text/javascript">
+    $("a > img").hover(function () {
+        $(this).animate({height: '250px'}, "slow");
+    }, function () {
+        $(this).animate({height: '200px'}, "slow");
+    });
+</script>
+{% endblock foot_script %}
