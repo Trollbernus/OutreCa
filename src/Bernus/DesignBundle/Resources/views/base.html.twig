@@ -37,9 +37,8 @@
 {% block page_header %}
 {% endblock page_header %}
 
-{% block header %}
-{% if author is defined %}
-    {% if author == "Oxylos" %}
+{% block navbar %}
+    {% if author is defined and author == "Oxylos" %}
 <div id="header">
     <img src="/bundles/bernusdesign/images/Oxylos/header_outre_ca.png" alt="Outre-Ca">
 </div>
@@ -47,8 +46,10 @@
     <img src="/bundles/bernusdesign/images/Oxylos/banner.png" alt="Oxylos">
 </div>
     {% endif %}
+{% endblock navbar %}
 
-    {% if author == "Tarran" %}
+{% block header %}
+{% if author is defined and author == "Tarran" %}
 <div id="header">
     <img src="/bundles/bernusdesign/images/Tarran/header_outre_ca.png" alt="Outre-Ca">
 </div>
@@ -61,6 +62,5 @@
         <a href="{{ path('about') }}">Reprendre depuis la dernière lecture</a>
     </div>
 </div>
-    {% endif %}
 {% endif %}
 {% endblock header %}

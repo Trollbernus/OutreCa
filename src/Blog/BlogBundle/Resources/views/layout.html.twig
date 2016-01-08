@@ -6,6 +6,7 @@
 <div id="nav" class="container">
     {{ mopa_bootstrap_menu('BlogBlogBundle:MenuBuilder:menu', {"automenu": "pills"}) }}
 </div>
+{{ parent() }}
 {% endblock navbar %}
 
 {% block jquery_cdn_url %}//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js{% endblock jquery_cdn_url %}
