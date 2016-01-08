@@ -1,0 +1,32 @@
+$path_to_img: '/bundles/bernusdesign/images/Oxylos/';
+
+body {
+    background: url('#{$path_to_img}bg_top.png') top repeat-x, url('#{$path_to_img}bg_bottom.png') bottom repeat-x;
+    background-color: #000;
+}
+
+#header {
+    text-align: center;
+    margin-top: -93px;
+}
+
+#banner {
+    text-align: center;
+    margin-top: 100px;
+    margin-bottom: 20px;
+}
+
+.article {
+    border-image-source: url('#{$path_to_img}border.png');
+    border-image-slice: 248 217 192 208 fill;
+    border-image-width: 248px 217px 192px 208px;
+    border-image-outset: 0px 0px 0px 0px;
+    border-image-repeat: repeat repeat;
+    padding: 248px 217px 192px 208px;
+    word-wrap: break-word;
+    color: #fff;
+    div:first-child {
+        margin: -202px -143px -184px -86px;
+        background-color: #262626;
+    }
+}

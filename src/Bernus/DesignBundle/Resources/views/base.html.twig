@@ -3,8 +3,8 @@
 {% block head_style %}
     {% stylesheets
         '@MopaBootstrapBundle/Resources/public/less/mopabootstrapbundle.less'
-        '@BernusDesignBundle/Resources/less/global.less'
-        '@BernusDesignBundle/Resources/less/border.less'
+        '@BernusDesignBundle/Resources/styles/global.less'
+        '@BernusDesignBundle/Resources/styles/border.less'
         filter='less,yui_css,cssrewrite'
         output='css/design.css'
     %}
@@ -14,8 +14,8 @@
     {% if author is defined %}
         {% if author == "Oxylos" %}
             {% stylesheets
-                '@BernusDesignBundle/Resources/less/Oxylos.less'
-                filter='?yui_css'
+                '@BernusDesignBundle/Resources/styles/Oxylos.scss'
+                filter='compass,?yui_css'
                 output='css/Oxylos.css'
             %}
             <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
@@ -24,8 +24,8 @@
 
         {% if author == "Tarran" %}
             {% stylesheets
-                '@BernusDesignBundle/Resources/less/Tarran.scss'
-                filter='compass,yui_css'
+                '@BernusDesignBundle/Resources/styles/Tarran.scss'
+                filter='compass,?yui_css'
                 output='css/Tarran.css'
             %}
             <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
@@ -40,6 +40,12 @@
 {% block header %}
 {% if author is defined %}
     {% if author == "Oxylos" %}
+<div id="header">
+    <img src="/bundles/bernusdesign/images/Oxylos/header_outre_ca.png" alt="Outre-Ca">
+</div>
+<div id="banner">
+    <img src="/bundles/bernusdesign/images/Oxylos/banner.png" alt="Oxylos">
+</div>
     {% endif %}
 
     {% if author == "Tarran" %}
