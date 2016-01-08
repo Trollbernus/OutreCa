@@ -59,9 +59,9 @@
 {{ parent() }}
 <script type="text/javascript">
     $("a > img").hover(function () {
-        $(this).animate({height: '250px'}, "slow");
+        $(this).stop().animate({height: '250px'}, "slow");
     }, function () {
-        $(this).animate({height: '200px'}, "slow");
+        $(this).stop().animate({height: '220px'}, "slow");
     });
 </script>
 {% endblock foot_script %}
