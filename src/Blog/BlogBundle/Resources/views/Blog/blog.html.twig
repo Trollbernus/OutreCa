@@ -5,14 +5,15 @@
 
 {% embed "BernusDesignBundle::border.html.twig" %}
 {% block border_content %}
-<div class="article">
+<div class="article col-md-12">
+    <div>
+        <header>
+            <address><strong>{{ article.author }}</strong>, le {{ article.publicationDate|date('d/m/Y') }}</address>
+            <h3><a href="{{ path('blog_show', {'author': article.author, 'id': article.id, 'title': article.title }) }}">{{ article.title }}</a></h3>
+        </header>
 
-    <header>
-        <address><strong>{{ article.author }}</strong>, le {{ article.publicationDate|date('d/m/Y') }}</address>
-        <h3><a href="{{ path('blog_show', {'author': article.author, 'id': article.id, 'title': article.title }) }}">{{ article.title }}</a></h3>
-    </header>
-
-    <div class="content">{{ article.content|raw('html') }}</div>
+        <div class="content">{{ article.content|raw('html') }}</div>
+    </div>
 
 </div>
 {% endblock border_content %}

@@ -78,7 +78,6 @@ class BlogController extends Controller
             }
             if ($article->getPublicationDate() > new \Datetime()) {
                 $this->get('session')->getFlashBag()->add('info', 'L\'article n\'a pas encore été publié');
-                // ne pas afficher l'article si on n'est pas un auteur
             }
 
             return $this->render('BlogBlogBundle:Blog:show.html.twig', array(

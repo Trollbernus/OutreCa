@@ -38,7 +38,8 @@ class ArticleType extends AbstractType
             ),
             'attr' => array(
                 'placeholder' => 'Maintenant'
-            )
+            ),
+            'required' => false
         ));
 
         $builder->add('published', 'checkbox', array(

@@ -1,0 +1,58 @@
+$path_to_img: '/bundles/bernusdesign/images/Tarran/';
+$bg_color: #d2db68;
+$green: #30571a;
+
+body {
+
+    background: url('#{$path_to_img}bg_top.png') top repeat-x, url('#{$path_to_img}bg_bottom.png') bottom repeat-x;
+    background-color: $green;
+}
+
+#header {
+    text-align: center;
+    margin-top: -93px;
+}
+
+#chapter_nav {
+    height: 202px;
+    width: 580px;
+    margin: auto;
+    a {
+        position: relative;
+        padding: 5px;
+        z-index: 1;
+    }
+}
+
+#table_of_content {
+    height: 141px;
+    width: 400px;
+    padding-left: 120px;
+    padding: 55px 90px 50px 90px;
+    text-align: center;
+    background: url('#{$path_to_img}table_of_contents.png')
+}
+
+#resume {
+    height: 141px;
+    width: 400px;
+    position: relative;
+    left: 180px;
+    top: -80px;
+    padding: 55px 90px 50px 130px;
+    text-align: center;
+    background: url('#{$path_to_img}resume.png');
+}
+
+.article {
+    border-image-source: url('#{$path_to_img}border.png');
+    border-image-slice: 248 217 192 208 fill;
+    border-image-width: 248px 217px 192px 208px;
+    border-image-outset: 0px 0px 0px 0px;
+    border-image-repeat: repeat repeat;
+    padding: 248px 217px 192px 208px;
+    div:first-child {
+        margin: -134px -30px -112px 0;
+        background-color: #fff;
+    }
+}

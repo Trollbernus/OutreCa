@@ -2,15 +2,10 @@
 
 {% block title %}L'Outre-Ça{% endblock title %}
 
-{% block headline %}L'Outre-Ça{% endblock headline %}
-
 {% block navbar %}
-{% embed 'BlogBlogBundle::Navbar/navbar.html.twig' with { staticTop: true } %}
-    {% block menu %}
-        {{ mopa_bootstrap_menu('BlogBlogBundle:MenuBuilder:mainMenu') }}
-        {{ mopa_bootstrap_menu('BlogBlogBundle:MenuBuilder:userMenu') }}
-    {% endblock %}
-{% endembed %}
+<div id="nav" class="container">
+    {{ mopa_bootstrap_menu('BlogBlogBundle:MenuBuilder:menu', {"automenu": "pills"}) }}
+</div>
 {% endblock navbar %}
 
 {% block jquery_cdn_url %}//ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js{% endblock jquery_cdn_url %}

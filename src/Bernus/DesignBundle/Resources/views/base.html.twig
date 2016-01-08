@@ -15,7 +15,7 @@
         {% if author == "Oxylos" %}
             {% stylesheets
                 '@BernusDesignBundle/Resources/less/Oxylos.less'
-                filter='yui_css'
+                filter='?yui_css'
                 output='css/Oxylos.css'
             %}
             <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
@@ -24,8 +24,8 @@
 
         {% if author == "Tarran" %}
             {% stylesheets
-                '@BernusDesignBundle/Resources/less/Tarran.less'
-                filter='yui_css'
+                '@BernusDesignBundle/Resources/less/Tarran.scss'
+                filter='compass,yui_css'
                 output='css/Tarran.css'
             %}
             <link href="{{ asset_url }}" type="text/css" rel="stylesheet" media="screen" />
@@ -33,3 +33,28 @@
         {% endif %}
     {% endif %}
 {% endblock head_style %}
+
+{% block page_header %}
+{% endblock page_header %}
+
+{% block header %}
+{% if author is defined %}
+    {% if author == "Oxylos" %}
+    {% endif %}
+
+    {% if author == "Tarran" %}
+<div id="header">
+    <img src="/bundles/bernusdesign/images/Tarran/header_outre_ca.png" alt="Outre-Ca">
+</div>
+
+<div id="chapter_nav">
+    <div id="table_of_content">
+        <a href="{{ path('blog', { 'author': "Dora", 'page': 1 }) }}">Table des matières</a>
+    </div>
+    <div id="resume">
+        <a href="{{ path('about') }}">Reprendre depuis la dernière lecture</a>
+    </div>
+</div>
+    {% endif %}
+{% endif %}
+{% endblock header %}

@@ -1,3 +1,11 @@
+{% if author is defined %}
+    {% if author == "Oxylos" %}
+    {% endif %}
+
+    {% if author == "Tarran" %}
+    {% endif %}
+
+    {% if author != "Tarran" and author != "Oxylos" %}
 <div class="top">
     <div class="left"></div>
     <div class="right"></div>
@@ -9,7 +17,9 @@
     <div class="left">
         <div class="right">
             <div class="center">
-                {% block border_content %}{% endblock border_content %}
+    {% endif %}
+        {% block border_content %}{% endblock border_content %}
+    {% if author != "Tarran" and author != "Oxylos" %}
             </div>
         </div>
     </div>
@@ -21,3 +31,5 @@
     <div class="right"></div>
     <div class="center"></div>
 </div>
+    {% endif %}
+{% endif %}
