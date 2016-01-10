@@ -219,7 +219,7 @@
 
 	\textsc{\Large }\\[0.6cm]
 	\HRule \\[0.8cm]
-	{\huge \bfseries Cahier des charges \\ L'Outre-Ça}\\[0.4cm]
+	{\huge \bfseries Cahier des charges \\ L'Outre-Ça - version 3.0}\\[0.4cm]
 	\HRule \\[1cm]
 
 	\begin{minipage}[t]{0.3\textwidth}
@@ -313,138 +313,427 @@
 
 
 \chapter{La page d'accueil}
-		Une sorte de sommaire du site où on peut accéder à tout ce qu'il y a à  l'intérieur avec une arborescence logique. 
-		\section{Header}
-			Les petits boutons qu'il y a dans le header :
-			\begin{enumerate}
-				\item Un bouton qui mène aux partenaires (i.e. autres sites que nous recommandons).
-				\item Un bouton pour s'inscrire/se connecter.
-				\item Un bouton "voir les inscrits".
-				\item Un bouton "à propos".
-				\item Un bouton "contact"\footnote{À ce propos, si on loue un serveur et qu'on achète un nom de domaine, on pourrait créer des boîtes mail du genre \href{mailto:oxylos@outre-ca.fr}{oxylos@outre-ca.fr}.}.
-				\item Galerie
-				\item Un bouton "Vieilles archives" pour pouvoir consulter tous les articles de l'ancien site.
-			\end{enumerate}
-			La galerie est une nouveauté sur le site. Elle regroupera toutes les BD (terminées ou en cours). Ce sera l'occasion de mettre en valeur le lecteur de BD qu'on mettra en place.
+
+	Telle qu'elle se présente actuellement : 
+	\begin{enumerate}
+		\item Le titre \emph{L'Outre-Ça} en calligraphie.
+		\item En haut à gauche : un dessin-bouton qui mène au blog d'Oxylos.
+		\item En haut à droite : idem pour Tarran.
+		\item en bas à gauche : un dessin-bouton qui mène à la partie communautaire du site.
+		\item en bas à droite : un dessin-bouton qui mène à la partie "à propos". 
+	\end{enumerate}
+	Les animations, les changements graphiques, etc., seront discutés en temps réel entre le graphiste et le webmaster.
 
 
-		\section{Contenu principal}
-			Les grosses images sur lesquelles ont pourra cliquer, qui mèneront au contenu important du site.
-			\begin{enumerate}
-				\item Blog d'Oxylos
-				\item Blog de Tarran
-				\item Les actualités (les quelques derniers articles des blogs qui viennent de sortir) 
-			\end{enumerate}
+\chapter{Site d'Oxylos}
+	
+	Se trouve à l'URL \url{www.outre-ca.fr/oxylos}
 
+	Le site d'Oxylos se divise en deux principales parties : le blog et la galerie. Un accueil permet d'accéder à l'un ou à l'autre. Le header et le footer sont invariants dans tout le site d'Oxylos.
 
-		\section{Footer}
-			\begin{enumerate}
-				\item \emph{L'Outre-Ça - 2013-2015 - Réalisation par Dora et Oxylos.}
-				\item \emph{Le contenu de ce site n'est pas libre de droits, merci de contacter les auteurs pour toute demande d'utilisation}\footnote{Le "toute demande d'utilisation" est en fait un lien vers la rubrique contact.}.
-				\item Flux RSS d'Oxylos.
-				\item Flux RSS de Tarran. 
-			\end{enumerate}
-
-
-\chapter{Blogs}
-	Quasiment aucune différence entre avant et maintenant. 
-
-		\section{Header}
-			Les blogs auront plus d'indépendance qu'avant. En effet, chaque blog aura une bannière propre qui fait retourner à l'accueil du blog quand on clique dessus. Le header sera également légèrement différent : au lieu d'avoir un seul bouton d'accueil, il y aura un bouton d'accueil pour Oxylos, et un autre pour retourner à l'accueil de l'Outre-Ça. De plus, les archives de l'ancien site ne seront pas accessibles via le blog, on pourra seulement accéder aux archives du nouveau blog, mais aussi à la gallerie. Pour résumer, voici à quoi ressemble le header (quasiment identique à la page d'accueil):
-			\begin{enumerate}
-				\item Un bouton qui mène aux partenaires (i.e. autres sites que nous recommandons).
-				\item Un bouton pour s'inscrire/se connecter.
-				\item Un bouton "voir les inscrits".				
-				\item Un bouton "à propos".
-				\item Un bouton "contact".
-				\item Un bouton "outre-ça" pour retourner à l'accueil du site.
-				\item Un bouton "Oxylos" ou "Tarran" selon le blog où l'on se trouve, pour retourner à l'accueil du blog.
-				\item Galerie
-				\item Un bouton "archives" qui permet de consulter les archives du blog, mais pas de l'ancien site.
-			\end{enumerate}
-
-		\section{Contenu}
-			Bien sûr, une bannière. Quand on clique dessus, cela fait le même effet que quand on clique sur le bouton "Oxylos" ou "Tarran" selon le blog où l'on se trouve.
-
-			Ensuite, la structure est presque la même que sur la version précédente de l'Outre-Ça : un blog qui fonctionne en articles chronologiques, avec des commentaires, etc. La nuance, c'est que presque toutes mes images et mes BD sont aussi systématiquement rangées dans la gallerie (je préciserai son contenu dans le chapitre \ref{galerie}). Ainsi, quand on clique dessus, le lecteur de BD (ou d'image) s'active automatiquement pendant que tout le reste du site s'assombrit. J'ai dit "presque" parce que si je veux faire un lien vers un autre site via une image, ou encore si je veux juste faire un petit gribouilli infâme, je n'ai pas forcément envie que ça apparaisse sur la gallerie.
-
-			Pour Tarran qui ne dessine pas, à moins qu'il n'écrive lui-même précisément ce qu'il veut, je pense qu'on peut laisser son blog tel quel (sauf pour le design sur lequel je travaillerai bientôt).
-
-		\section{Footer}
-			Presque identique à la page d'accueil. Simplement, sur la partie "Oxylos", on enlève le flux RSS de Tarran, et réciproquement.
-
-
-\chapter{Galerie} \label{galerie} 
-	La partie intégralement nouvelle : lis attentivement.
 	\section{Header}
+		Ce header est le même sur tout le site d'Oxylos.
+		Le header regroupe les boutons suivants, de gauche à droite :
 		\begin{enumerate}
-			\item Un bouton qui mène aux partenaires (i.e. autres sites que nous recommandons).
-			\item Un bouton pour s'inscrire/se connecter.
-			\item Un bouton "voir les inscrits".			
-			\item Un bouton "à propos".
-			\item Un bouton "contact".
-			\item Un bouton "outre-ça" pour revenir à l'accueil du site.
-			\item Un bouton "accueil gallerie" pour revenir à l'accueil de la galerie.
+			\item \emph{Accueil} : mène à la page d'accueil du site d'Oxylos (cf. section \ref{accueil_ox}).
+			\item \emph{À propos} (cf. chapitre \ref{a_propos})
+			\item \emph{Liens} : les sites que nous recommandons. Je préfère "liens" que "partenaires", soit dit en passant (cf. section \ref{liens}).
+			\item \emph{Archives} : permet d'accéder aux archives du blog. (cf. section \ref{archives}).
+			\item \emph{L'Outre-Ça} : image calligraphiée, lien mène à l'accueil de l'Outre-Ça.
+			\item \emph{Communauté} : accède à la liste des inscrits (cf. section \ref{communaute}).
+			\item \emph{Connexion} 
+			\item \emph{Inscription} 
 		\end{enumerate}
 
-	\section{Contenu}
-		Je ferai sans doute une petite bannière (quand on clique dessus on retourne à l'accueil de la gallerie). En dessous de cette bannière, il y aura peut-ête écrit "Contenu réalisé par Oxylos" (puisque Tarran ne dessine pas), "Oxylos" étant un lien vers mon blog. La galerie comporte trois grande partie matérialisées 
+	\section{Footer}
+		Ce footer est le même sur tout le site d'Oxylos.
+		En haut à gauche : "flux RSS", lien vers le flux RSS du site d'Oxylos.
+		En haut à droite : "L'Outre-Ça - 2013-2016 ; site réalisé par Dora et Oxylos Neest"
+		En bas, centré : "Le contenu de ce site n'est pas libre de droit. Contacter les auteurs pour toute demande d'utilisation." \emph{Contacter les auteurs} est un bouton qui mène à la page \emph{contacts}.
 
-		\subsection{Accueil}
-			Quand on arrive sur la gallerie, on voit trois grandes images qui sont des liens vers les sous-parties de la gallerie :
+	\section{Accueil}\label{accueil_ox}
+
+		\emph{Attention !} Le header de l'accueil est graphiquement différent de celui de la galerie et du blog : il n'y a pas de flammes.
+
+		La page d'accueil est particulièrement simple.
+		On y trouve en dessous du header : la bannière, imposante et majestueuse.
+		En dessous de la bannière, deux dessins-boutons :
+		\begin{enumerate}
+			\item À gauche : \emph{Blog}, qui mène au blog (cf. section \ref{blog_ox}).
+			\item À droite : \emph{Galerie}, qui mène, devinez à quoi : à la galerie (cf. section \ref{galerie}). 
+		\end{enumerate}
+
+	\section{Blog} \label{blog_ox}
+		\subsection{Point de vue du visiteur}
+			On y trouve les articles rédigés par Oxylos. Ils sont classés du plus récent au plus ancien. Il y a un article par page.
+
+			En dessous du footer, on trouove une bannière où il y a écrit "BLOG". Histoire que les lecteurs ne soient pas perdus. En dessous, un discret mais visible bouton "voir la galerie".
+
+			Encore en dessous, nous trouvons l'article le plus récent. Tout le contenu de la liste suivante est inclus dans le cadre de l'article. Celui-ci contient, de haut en bas :
 			\begin{enumerate}
-				\item Bandes dessinées.
-				\item Illustrations.
-				\item Croquis. 
+			 	\item "Le [date] par Oxylos Neest".
+			 	\item Titre de l'article.
+			 	\item Corps de l'article.
+			 	\item "$n$ commentaires" où $n\in \mathbb{N}$.
+			\end{enumerate} 
+
+			S'il s'agit de l'article le plus récent, en dessous de celui-ci nous trouvons simplement une flèche orientée vers la droite indiquant "Article suivant". S'il ne s'agit pas de l'article le plus récent, nous trouvons les deux flèches : "Article précédent" et "article suivant". 
+
+			Losrque l'on clique sur "$n$ commentaires", on accède aux commentaires : la page s'ouvre juste en dessous de l'article et on commence directement à lire les commentaires.
+
+		\subsection{Création d'un article}
+			Pour Oxylos, la création des articles est presque identique à celle de la version 2.0 de l'Outre-Ça. Il y a cependant une fonctionnalité en plus : dans le corps du texte de l'article, Oxylos peut mettre soit des images ordinaires soit des super-images. Les images ordinaires s'uploadent exactement comme dans la version 2.0 de l'Outre-Ça. En revanche, quand Oxylos veut mettre une super-image, il doit en choisir une disponible dans la galerie (cf. sections \ref{galerie} et \ref{lecteur_images}).
+
+	\section{Galerie} \label{galerie}
+		\subsection{Point de vue du visiteur}
+			On y trouve toutes les créations graphiques d'Oxylos lisible avec le super-lecteur d'images (cf. chapitre \ref{lecteur_images}). 
+
+			Tout en haut, une bannière "galerie". En dessous, un discret mais visible bouton "Voir le blog".
+
+			De gauche à droite, une série de boutons :
+			\begin{enumerate}
+				\item \emph{Tout} : donne accès à tous les éléments de la galerie.
+				\item \emph{Bandes dessinées} : donne accès aux BDs de la galerie.
+				\item \emph{Illustrations} : donne accès aux illustrations de la galerie.
+				\item \emph{Croquis} : donne accès aux croquis de la galerie. 
 			\end{enumerate}
 
-			Quand on clique sur l'un des trois, on arrive dans une des trois branches de la gallerie.
+			En dessous, les éléments clicables de la galeries qui ouvrent le lecteur, classés du plus récent au plus ancien.
+			Le contenu de chaque élément est discuté au chapitre \ref{lecteur_images}.
 
-		\subsection{Branches}
-			Comme elles ne sont pas différentes, je regroupe tout dans le même paragraphe.
+		\subsection{Point de vue de l'auteur}
+			Un bouton \emph{modifier/supprimer} à côté de chaque super-image. Quand l'auteur n'est pas dans la partie \emph{Tout}, au dessus des éléments de la galerie se trouve un bouton \emph{Ajouter une super-image}.
 
-			Le header est le même que sur la page d'accueil. Seulement, en dessous du header, il y a un deuxième header avec trois boutons : "bandes dessinées", "illustrations", et "croquis", pour pouvoir naviguer facilement d'une branche à l'autre.
 
-			La gallerie en elle-même est constituées d'icones organisées à peu près de la même façon que les galeries de Deviantart (exemple ici : \url{http://oxylos-neest.deviantart.com/gallery/}). Une petite différence : quand on fait passer le pointeur sur un élément de la galerie, nous avons le choix entre deux choses (cela se matérialise par l'apparition de deux boutons) : lire l'article du blog dans lequel je parle de cet élément pour pouvoir commenter, etc. (ce bouton est donc un lien vers l'article), ou bien activer directement le lecteur d'image.
+	\section{Archives}\label{archives}
+		Contient la liste des articles d'Oxylos.
 
-	\section{Lecteur de BD/images}
-		Le lecteur de BD/d'images est un programme qui a en entrée un ou plusieurs fichiers d'images. Quand on l'active, tout le reste du site s'assombrit, et la première image apparaît. Remarque : seules les suites d'images de la galerie peuvent apparaître dans le lecteur de BD/d'images.
+		Tout en haut, une bannière où il y a écrit "Archives".
 
-		\subsection{Côté utilisateur}
-			Côté utilisateur, voici les fonctions que je veux voir sur ce lecteur d'images :
-			\begin{enumerate}
-				\item Un zoom matérialisé par de discrets boutons + et - en bas de l'écran, mais qui peut aussi s'activer avec la molette de la souris, et aussi par les touches + et - du clavier. 
-				\item Déplacement au sein de l'image quand on a zoomé : le clic de la souris qui permet en quelque sorte "d'attraper" l'image. Il y a également des curseurs de défilement complètement à droite et complètement en bas de l'écran. Ces curseurs doivent être aussi discrets que possible, par exemple en ayant une couleur sombre tout comme le fond de l'image.
-				\item Remarque : le zoom et le déplacement peuvent être implémentés en même temps pour les écrans tactiles ou les trackpads des mac : on peut zoomer et se déplacer en touchant l'écran avec deux doigts.
-				\item Passage à l'image suivante, matérialisé par deux boutons à gauche et à droite de l'écran, mais aussi par les touches des flèches gauche et droite du clavier.
-				\item Quitter le lecteur d'images : un bouton en haut à gauche ou en haut à droite. Possible aussi en appuyant sur échappe ou encore en cliquant dans le noir, ailleurs que sur l'image.
-			\end{enumerate}
-			Remarque : quand la personne qui lit zoome beaucoup (et si l'image en question est assez grande pour le permettre), l'image remplit tout l'espace visuel du navigateur. Cela permet de donner une expérience de lecture inédite. 
+		Ensuite, dans le même cadre que les articles d'Oxylos, on trouve quelque chose rangé de la façon suivante :
+
+		Un bouton "Retour au blog".
+
+		\begin{itemize}
+			\item 2016
+			\begin{itemize}
+				\item Janvier
+				\begin{itemize}
+					\item Bienvenue sur le site ([date])
+					\item De l'arbre sur la montagne ([date])
+				\end{itemize}
+				\item Février
+				\begin{itemize}
+					\item Festival d'Angoulême ([date])
+					\item etc.
+				\end{itemize}
+			\end{itemize}
+			\item 2017
+			\begin{itemize}
+				\item etc.
+			\end{itemize}
+		\end{itemize}
+		Chaque élément étant déroulant : on peut replier ou déplier "2016" ou juste "janvier" etc. si on ne veut pas voir ce qu'il y a.
+
+		En dessous de tout ceci, deux boutons : \emph{retour au blog} et \emph{Voir la galerie}.
+
+\chapter{Site de Tarran}
+	\emph{Remarque importante :} Tarran m'a dit récemment qu'il songeait à changer de pseudo pour écrire.
+
+	Tout comme Oxylos, le site de Tarran a sa propre URL : quelque chose comme \url{www.outre-ca.fr/tarran}. La structure du site de Tarran est plus simple que celle du site d'Oxylos, mais aussi plus originale, car elle se présente sous la forme d'un web-roman.
+
+	\section{Header}
+		C'est le même sur tout le site de Tarran.
+		Le header regroupe les boutons suivants, de gauche à droite :
+		\begin{enumerate}
+			\item \emph{Accueil} : mène à la première page  du site de Tarran.
+			\item \emph{À propos} (cf. chapitre \ref{a_propos})
+			\item \emph{Liens} : les sites que nous recommandons. Je préfère "liens" que "partenaires", soit dit en passant (cf. chapitre \ref{liens}).
+			%\item \emph{Archives} : permet d'accéder aux archives du blog. (cf. section \ref{archives}).
+			\item \emph{L'Outre-Ça} : image calligraphiée, lien mène à l'accueil de l'Outre-Ça.
+			\item \emph{Communauté} : accède à la liste des inscrits (cf. section \ref{communaute}).
+			\item \emph{Connexion} 
+			\item \emph{Inscription} 
+		\end{enumerate}
+
+	\section{Footer}
+		C'est le même sur tout le site de Tarran. C'est exactement le même que celui d'Oxylos, sauf que le flux RSS renvoie au flux de Tarran.
+
+	\section{Structure du web-roman}
+		Il y a trois articles par page. Chaque groupe de trois articles représente un chapitre. Les chapitres sont regroupés en tomes, et à long terme les tomes seront peut-être regroupés en parties.
+		Quand les lecteurs arrivent sur le site de Tarran, ils tombent sur le premier chapitre du tome un de la première partie. 
+
+		\subsection{Structure d'un chapitre}
+			Dans un chapitre, nous trouvons, de haut en bas :
+
+			Deux boutons : \emph{Table des matières} (cf. section \ref{toc}), et \emph{Reprendre depuis la dernière lecture}. Il faut se connecter pour accéder à cette fonctionnalité. En effet, le site peut mémoriser, pour chaque compte, la dernière page du site de Tarran qu'il a visité (hors table des matières bien sûr), et l'y renvoyer immédiatement. Si l'utilisateur n'est pas connecté et clique sur ce bouton, une fenêtre s'ouvre et indique : "il faut se connecter pour accéder à cette fonctionnalité du site" avec bien sûr les boutons \emph{Connexion} et \emph{Incription}. 
+
+			Ensuite, nous trouvons, dans le même cadre que les articles, d'abord le titre de la partie, puis le titre du tome, puis le titre du chapitre qui contient les trois articles. Les titres de la partie et du tome sont écrits en petit et le titre du chapitre en gros. Quelque chose comme cela :
+
+			\phantom{lulz}
+
+			Partie 1 : végétaux humains. - Tome 1 : De l'arbre sur la montagne.
+
+			\phantom{lulz}
+
+			\begin{huge}\begin{bfseries} Chapitre 1 : Enracinement. \end{bfseries} \end{huge}
+
+			\phantom{lulz}
+
+			Plus bas, les trois articles, dans trois cadres, dont le contenu est similaire à celui d'Oxylos (cf. section \ref{blog_ox}).
+
+			Et tout en bas : 
+			\begin{itemize}
+				\item S'il s'agit du tout premier chapitre, on trouve deux boutons :
+				\begin{itemize}
+					\item \emph{Chapitre suivant} mène à la page suivante contenant trois articles.
+					\item \emph{Tome suivant} mène au début du tome suivant (lorsqu'il existera, ce qui ne sera pas le cas lors des premiers mois du site).
+				\end{itemize}
+				\item S'il s'agit d'un chapitre du premier tome, on trouve trois boutons :
+				\begin{itemize}
+					\item \emph{Chapitre précédent} mène à la page précédente contenant trois articles.
+					\item \emph{Chapitre suivant} mène à la page suivante contenant trois articles.
+					\item \emph{Tome suivant} mène au début du tome suivant (lorsqu'il existera, ce qui ne sera pas le cas lors des premiers mois du site).
+				\end{itemize}
+				\item S'il s'agit dun chapitre quelconque, on trouve quatre boutons :
+				\begin{itemize}
+					\item \emph{Tome précédent} mène au début du tome précédent (quand il existera).
+					\item \emph{Chapitre précédent} mène à la page précédente contenant trois articles.
+					\item \emph{Chapitre suivant} mène à la page suivante contenant trois articles.
+					\item \emph{Tome suivant} mène au début du tome suivant (quand il existera). 
+				\end{itemize}
+				\item S'il s'agit d'un chapitre du dernier tome, on trouve trois boutons :
+				\begin{itemize}
+					\item \emph{Tome précédent} mène au début du tome précédent (quand il existera).
+					\item \emph{Chapitre précédent} mène à la page précédente contenant trois articles.
+					\item \emph{Chapitre suivant} mène à la page suivante contenant trois articles.
+				\end{itemize}
+				\item S'il s'agit du dernier chapitre, on trouve deux boutons :
+				\begin{itemize}
+					\item \emph{Tome précédent} mène au début du tome précédent (quand il existera).
+					\item \emph{Chapitre précédent} mène au chapitre précédent.
+				\end{itemize}
+			\end{itemize}
+
+			Tout cela semble compliqué mais quand on y pense c'est logique.
+
+		\subsection{Table des matières} \label{toc}
+
+			Dans un cadre semblable à celui des articles, nous trouvons ce qui suit, de haut en bas.
+			Un bouton \emph{Reprendre depuis la dernière lecture}.
+
+			Quelque chose qui a la structure suivante :
+			\begin{itemize}
+				\item Partie 1
+				\begin{itemize}
+					\item Tome 1 : [titre]
+					\begin{itemize}
+						\item Chapitre 1 : [Titre]
+						\begin{itemize}
+							\item De l'arbre sur la montagne [date]
+							\item Lorem ipsum [date]
+							\item La terre et le ciel [date]
+						\end{itemize}
+						\item Chapitre 2 : [Titre]
+						\begin{itemize}
+							\item De l'arbre sur la montagne [date]
+							\item Lorem ipsum [date]
+							\item La terre et le ciel [date]
+						\end{itemize}
+					\end{itemize}
+					\item Tome 2 : [Titre]
+					\begin{itemize}
+						\item Chapitre 1 : [Titre]
+						\begin{itemize}
+							\item De l'arbre sur la montagne [date]
+							\item Lorem ipsum [date]
+							\item La terre et le ciel [date]
+						\end{itemize}
+						\item Chapitre 2 : [Titre]
+						\begin{itemize}
+							\item De l'arbre sur la montagne [date]
+							\item Lorem ipsum [date]
+							\item La terre et le ciel [date]
+						\end{itemize}
+					\end{itemize}
+				\end{itemize}
+				\item etc.
+			\end{itemize}
+
+			J'ai mis deux chapitres par tome mais le nombre est totalement arbitraire et dépendra du bon vouloir de notre Tarran international.
 
 		\subsection{Côté auteur}
-			Quand je crée une suite d'images qui vont être lues par le lecteur de BD, il y a deux paramètres importants. D'abord, la taille de l'image, mais ça c'est moi qui le décide au moment même où j'enregistre mon image sur photoshop et quand j'upload. Mais ce que j'aimerais faire sur le lecteur, c'est choisir la taille apparente de l'image au moment où la personne qui lit arrive sur cette image. Par exemple, je peux vouloir uploader une grande image mais dont on peut saisir l'essentiel rapidement sans qu'elle ne prenne toute la place. Si la personne qui lit est intéressée, elle peut zoomer autant que le permet la taille de l'image.
+			\subsubsection{Présentation générale}
 
-			Mais je vois déjà la question arriver : "Mais comment on fait pour créer une suite d'image lisible par le super-lecteur ?" Chaque image a forcément un article qui en parle. Donc je crée ces super-lectures au moment où j'écris mon article. Ainsi, dans l'interface où j'écris mon article, il y a un nouveau bouton : "créer une super-lecture". Là, je dois entrer plusieurs choses :
-			\begin{enumerate}
-				\item Le répertoire de la galerie dans lequel se trouve l'image (BD, illustration, ou croquis).
-				\item Un titre (celui qui apparaîtra sur la galerie).
-				\item Ma suite d'image (a priori autant que je veux). Au moment de valider l'upload une image, je choisis sa taille apparente au moment de son apparition ; cela peut par exemple se matérialiser par une simulation du lecteur, je déplace l'image comme je veux qu'elle apparaisse, et il y a un bouton en plus pour valider.
-				\item Une "image-résumé", qui apparaît sur l'article où je parle de la suite d'images. 
-			\end{enumerate}
+				Tarran aura des possibilités particulières. Quand il cliquera sur "Tarran" (en haut à droite du header), il aura accès aux boutons suivants :
+				\begin{itemize}
+					\item \emph{Mon compte}
+					\item \emph{Mon \oe{}uvre} mène à la table des matières.
+					\item \emph{Mode lecture} si le mode auteur est actif, \emph{Mode auteur} si le mode lecture est actif (cf. paragraphe \ref{auteurs})
+					\item \emph{Déconnexion}
+				\end{itemize}
+				Comme la structure des chapitres est particulièrement compliquée, la création se fera à partir de la table des matières (possible uniquement quand il est connecté bien sûr). Dans ce cas, il voit exactement la même table des matières que les lecteurs mais avec des boutons en plus que je détaille ci-dessous (les boutons sont en \begin{bfseries} gras \end{bfseries}) :
 
-			Une fois que j'ai créé une suite d'images avec le super-lecteur dans un article, elle apparaît automatiquement dans la galerie.
+				Quelque chose qui a la structure suivante :
+				\begin{itemize}
+					\item Partie 1 \begin{bfseries} supprimer/modifier \end{bfseries}
+					\begin{itemize}
+						\item Tome 1 : [titre] \begin{bfseries} supprimer/modifier \end{bfseries}
+						\begin{itemize} 
+							\item Chapitre 1 : [Titre] \begin{bfseries} supprimer/modifier \end{bfseries}
+							\begin{itemize}
+								\item De l'arbre sur la montagne [date] \begin{bfseries} supprimer/modifier \end{bfseries}
+								\item Lorem ipsum [date] \begin{bfseries} supprimer/modifier \end{bfseries}
+								\item La terre et le ciel [date] \begin{bfseries} supprimer/modifier \end{bfseries}
+							\end{itemize}
+							\item Chapitre 2 : [Titre] \begin{bfseries} supprimer/modifier \end{bfseries}
+							\begin{itemize}
+								\item De l'arbre sur la montagne [date] \begin{bfseries} supprimer/modifier \end{bfseries}
+								\item Lorem ipsum [date] \begin{bfseries} supprimer/modifier \end{bfseries}
+								\item La terre et le ciel [date] \begin{bfseries} supprimer/modifier \end{bfseries}
+							\end{itemize}
+						\end{itemize}
+						\item Tome 2 : [Titre] \begin{bfseries} supprimer/modifier \end{bfseries}
+						\begin{itemize}
+							\item Chapitre 1 : [Titre] \begin{bfseries} supprimer/modifier \end{bfseries}
+							\begin{itemize}
+								\item De l'arbre sur la montagne [date] \begin{bfseries} supprimer/modifier \end{bfseries}
+								\item Lorem ipsum [date] \begin{bfseries} supprimer/modifier \end{bfseries}
+								\item La terre et le ciel [date] \begin{bfseries} supprimer/modifier \end{bfseries}
+							\end{itemize}
+							\item Chapitre 2 : [Titre] \begin{bfseries} supprimer/modifier \end{bfseries}
+							\begin{itemize}
+								\item De l'arbre sur la montagne [date] \begin{bfseries} supprimer/modifier \end{bfseries}
+								\item \begin{bfseries} + Ajouter un article \end{bfseries} 
+							\end{itemize}
+							\item \begin{bfseries} + Ajouter un chapitre \end{bfseries}
+						\end{itemize}
+						\item \begin{bfseries} + Ajouter un tome \end{bfseries}
+					\end{itemize}
+					\item \begin{bfseries} + Ajouter une partie \end{bfseries}
+				\end{itemize}
 
-			J'en profite pour écrire une remarque importante. Dans mon blog, il y aura deux sortes d'images. D'abord, les images "normales" non intégrées dans la galeries, parce qu'elles n'ont aucun intérêt intrinsèques et ne peuvent qu'illustrer l'article. Mais je peux éventuellement transformer ces images en liens vers d'autres sites ou parties du site. Bref, c'est comme on faisait avant. Ensuite, il y a les "super-images" : il y a une image-résumé sur l'article du blog (ainsi que sur la galerie), et quand on clique dessus, le lecteur s'active. Visuellement, je pense qu'on pourrait mettre un petit cadre autour pour inviter les gens à cliquer dessus.
+			\phantom{troud}
 
-\chapter{Les comptes}
+			Remarque : si le dernier chapitre contient déjà trois articles, il n'y aura pas de bouton \emph{Ajouter un article}.
+
+			Lors de l'ouverture du site, cette page aura l'allure suivante :
+
+			\begin{bfseries} + Ajouter une partie \end{bfseries}
+
+			\subsubsection{Description détaillée de chaque bouton}
+
+				\emph{Ajouter un article} est exactement la même chose que pour Oxylos.
+
+				\emph{Ajouter un chapitre} ouvre un formulaire où Tarran devra écrire :
+				\begin{itemize}
+					\item Le titre du chapitre.
+					\item Le titre du premier article de ce chapitre.
+					\item Le corps du texte de l'article.
+				\end{itemize}
+
+				\emph{Ajouter un tome}
+				ouvre un formulaire où Tarran devra écrire :
+				\begin{itemize}
+					\item Le titre du tome.
+					\item Le titre du premier chapitre du tome.
+					\item Le titre du premier article de ce chapitre.
+					\item Le corps du texte de l'article.
+				\end{itemize}
+
+				\emph{Ajouter un tome} ouvre un formulaire où Tarran devra écrire :
+				\begin{itemize}
+					\item Le titre de la partie.
+					\item Le titre du premier tome de la partie.
+					\item Le titre du premier chapitre de ce tome.
+					\item Le corps du premier article de ce chapitre.
+					\item Le corps du texte de ce chapitre.
+				\end{itemize}
+
+				\emph{Supprimer} : ai-je vraiment besoin de préciser ?
+				
+				\emph{Modifier} :
+				\begin{itemize}
+					\item S'il s'agit d'un chapitre, d'un tome ou d'une partie, cela permet d'en modifier le titre.
+					\item S'il s'agit d'un article, ce bouton permet d'en modifier le titre et le corps du texte.
+				\end{itemize}
+
+				\phantom{gras}
+
+				Cette façon de faire lui laissera plus de souplesse dans l'execution de la création.
+
+
+
+
+
+
+
+
+
+
+
+
+
+\chapter{Lecteur de BD/images} \label{lecteur_images}
+	Le lecteur de BD/d'images est un programme qui a en entrée un ou plusieurs fichiers d'images. Quand on l'active, tout le reste du site s'assombrit, et la première image apparaît. Remarque : seules les suites d'images de la galerie peuvent apparaître dans le lecteur de BD/d'images.
+
+	\section{Côté utilisateur}
+		
+		Une super-image, avant qu'on ne clique dessus, se présente de la façon suivante :
+		
+		Dans un cadre particulier identifiable, nous trouvons une petite image de présentation, un titre, et une date de publication. Si l'on est dans la galerie, on trouve également une brève description. Si on est dans un article, la description n'apparaît pas car risque d'être redondante avec le texte de l'article.
+
+		Voici les fonctions que je veux voir sur ce lecteur d'images :
+		\begin{enumerate}
+			\item Un zoom matérialisé par de discrets boutons + et - en bas de l'écran, mais qui peut aussi s'activer avec la molette de la souris, et aussi par les touches + et - du clavier. 
+			\item Déplacement au sein de l'image quand on a zoomé : le clic de la souris qui permet en quelque sorte "d'attraper" l'image. Il y a également des curseurs de défilement complètement à droite et complètement en bas de l'écran. Ces curseurs doivent être aussi discrets que possible, par exemple en ayant une couleur sombre tout comme le fond de l'image.
+			\item Remarque : le zoom et le déplacement peuvent être implémentés en même temps pour les écrans tactiles ou les trackpads des mac : on peut zoomer et se déplacer en touchant l'écran avec deux doigts.
+			\item Passage à l'image suivante, matérialisé par deux boutons à gauche et à droite de l'écran, mais aussi par les touches des flèches gauche et droite du clavier.
+			\item Quitter le lecteur d'images : un bouton en haut à gauche ou en haut à droite. Possible aussi en appuyant sur échappe ou encore en cliquant dans le noir, ailleurs que sur l'image.
+			\item Possibilité de passer en mode plein écran.
+		\end{enumerate}
+		Remarque : quand la personne qui lit zoome beaucoup (et si l'image en question est assez grande pour le permettre), l'image remplit tout l'espace visuel du navigateur. Cela permet de donner une expérience de lecture inédite. 
+
+
+	\section{Côté auteur}
+
+		\subsection{Organisation générale}
+			Les super-images se créent à partir de la galerie. Quand Oxylos est connecté et visite la galerie, juste au dessus des objets de la galerie il y a un bouton "ajouter une super-image". Attention, ce bouton n'est pas accessible quand Oxylos est dans la partie "tout". Par exemple, s'il est dans la partie "BD" et qu'il ajoute une super-image, cette super-image sera automatiquement rangée dans la partie "BD" de la galerie. Cf. section \ref{galerie} pour mieux comprendre l'organisation de la galerie.
+
+		\subsection{Détails de la création d'une super-image}
+
+			Quand Oxylos crée une super-image, il arrive sur le formulaire qui contient les champs à remplir suivants.
+			\begin{itemize}
+				\item Titre de la super-image.
+				\item Breve description de la super-image, avec éventuellement un lien vers un article qui en parle.
+				\item Un bouton \emph{Image de présentation} : petite image visible dans la galerie ou sur un article du blog.
+				\item Un bouton \emph{Ajouter une image}.
+				\item Un bouton \emph{Aperçu}.
+				\item Un bouton \emph{Ajouter/publier} bref tu vois l'délire, c'est comme dans les articles.
+			\end{itemize}
+			\phantom{troud}
+
+			Détaillons quelques boutons. 
+
+			\emph{Ajouter une image} se fait en deux étapes. D'abord, il faut uploader l'image en question (ou la sélectionner parmi les images hébergées si l'ajout d'images se fait directement en ssh). Ensuite, il faut décider des paramètres d'affichage de l'image. \emph{Léo discutera de cela avec Laurent. Pour le moment, le lecteur d'image tel qu'implémenté fera l'affaire.}
+
+			\emph{Aperçu} permet à Oxylos de visualiser sa création avant de la publier.
+
+
+
+
+
+
+\chapter{Communauté} \label{communaute}
 	Une partie importante qui mérite d'être plus développée que dans les versions précédentes des comptes. 
 	\section{Les grades des comptes}
 		Dans cette section, j'énumère par ordre décroissant d'importance les différents grades des comptes. Chaque grade de classe $n$ peut faire monter en grade tous les comptes de grade inférieur à $n$.
+
 		\subsection{L'administrateur}
 			L'administrateur est un compte unique. C'est le big boss, le patron, autrement dit, Guillaume. Comme c'est lui qui code tout le site, techniquement il peut faire absolument tout ce qu'il désire. C'est le dieu dans son site.
 
-		\subsection{Auteurs}
-			Les auteurs du site sont des demi-dieux. Ils seront au nombre de trois : Oxylos, Tarran, et dans un futur proche, Icare, qui va nous coder une interface de communication entre les comptes (ce logiciel sera développé dans le chapitre \ref{dialogue}). Les auteurs peuvent faire énormément de choses. Voici l'énumération de leur possibilités :
+		\subsection{Auteurs} \label{auteurs}
+			Les auteurs du site sont des demi-dieux. Ils seront au nombre de deux : Oxylos et Tarran. Les auteurs peuvent faire énormément de choses. Voici l'énumération de leur possibilités :
 			\begin{enumerate}
 				\item Créer, écrire, modifier et supprimer des articles de blog.
 				\item Modérer les commentaires, les comptes, bref, tout ce qui s'occupe de gérer la communauté des inscrits.
@@ -452,10 +741,17 @@
 				\item Changer les bannières et les fonds des différentes pages du site.
 				\item Changer les polices d'écriture des titres etc. au sein de tout le site. 
 				\item Envoyer des mails aux inscrit ayant renseigné leur adresse mail. Donc, voire les mails des inscrits.
-				\item Envoyer des messages des inscrits, sur la boîte de messagerie interne du site.
+				\item Envoyer des messages aux inscrits, sur la boîte de messagerie interne du site.
 				\item Utiliser le logiciel de messagerie instantanée.
 			\end{enumerate}
 			Cette grande souplesse me permettra, si mon style graphique évolue trop, de pouvoir continuer à utiliser ce site sans que l'administrateur n'ait de travail supplémentaire à faire.
+
+			Les auteurs ont deux modes de lecture du site : le mode lecture et le mode auteur. Cela se matérialise par un bouton du menu déroulant en haut à droite du header :
+			\begin{itemize}
+				\item \emph{Mode lecture} si l'auteur est en mode auteur.
+				\item \emph{Mode auteur} si l'auteur est en mode lecture.
+			\end{itemize}
+			Cela permet aux auteurs de profiter du design original du site sans se taper les boutons "modifier/supprimer" partout. Quand un auteur se connecte, le mode est celui qu'il avait lors de sa dernière connexion. Lors de la toute première connexion d'un auteur, le mode par défaut est le mode auteur.
 
 		\subsection{Comptes d'élite}
 			Les comptes d'élite représentent, la plupart du temps, les amis des auteurs et de l'administrateur. Cela permet simplement à quelques personnes sélectionnées d'utiliser le logiciel de discussion instantannée pour ne pas avoir à subir les horreurs absolues que sont skype, fassebouque, etc., ni sans se faire espionner. Voici ce que peuvent faire les comptes d'élite :
@@ -467,6 +763,7 @@
 			\end{enumerate}
 			Les comptes d'élite sont donc forcément des personnes de confiance.
 
+
 		\subsection{Le compte de base}
 			Le compte que tout le monde peut avoir en indiquant un pseudo et en choisissant un mot de passe. En voici les possibilités :
 			\begin{enumerate}
@@ -474,10 +771,91 @@
 				\item Envoyer des messages des inscrits, sur la boîte de messagerie interne du site. 
 			\end{enumerate}
 
+		Tous les comptes peuvent écrire et modifier leur page de profil.
 
-	\section{L'interface des comptes}
-		Pour le moment je n'ai pas encore décrit ce qui se passait quand on cliquait sur "voir les inscrits" dans le header. Il y a une liste des comptes des inscrits ; on peut voir le profil de chacun en cliquant sur son pseudo. Les comptes sont séparés par grade. Tout en haut, il y a l'administrateur. En dessous, les auteurs. Encore en dessous, les comptes d'élite. Et tout en bas, les comptes ordinaires.
-		On peut mettre ça sous forme d'un tableau où on dit quand même quelques informations sur chaque compte dans la liste... j'y réfléchirai plus tard. 
+
+	\section{Visualisation des comptes}
+
+		\subsection{Header}
+			Le header est le même sur toute la partie communauté. Il contient les boutons suivants, de gauche à droite :
+			\begin{itemize}
+				\item \emph{Accueil} : mène à la page d'accueil du site d'Oxylos (cf. section \ref{accueil_ox}).
+				\item \emph{À propos} (cf. chapitre \ref{a_propos})
+				\item \emph{Liens} : les sites que nous recommandons. Je préfère "liens" que "partenaires", soit dit en passant (cf. section \ref{liens}).
+				\item \emph{Oxylos} mène au site d'Oxylos.
+				\item \emph{Tarran} mène au site de Tarran.
+				\item \emph{L'Outre-Ça} bouton calligraphié, mène à la page d'accueil du site.
+				\item \emph{Connexion}.
+				\item \emph{Inscription}.
+			\end{itemize}
+
+		\subsection{Footer}
+			Le footer est le même sur toute la partie communauté. Il contient :
+
+			En haut à droite : "L'Outre-Ça - 2013-2016 ; site réalisé par Dora et Oxylos Neest"
+			En bas, centré : "Le contenu de ce site n'est pas libre de droit. Contacter les auteurs pour toute demande d'utilisation." \emph{Contacter les auteurs} est un bouton qui mène à la page \emph{contacts}.
+
+
+
+		\subsection{Accueil de la communauté} \label{accueil_comm}
+			Quand on clique sur "communauté" du header ou sur le bouton en bas à gauche de la page d'accueil, on accède à la liste des profils. Il y a une liste des comptes des inscrits ; on peut voir le profil de chacun en cliquant sur son pseudo. Les comptes sont séparés par grade. Tout en haut, il y a l'administrateur. En dessous, les auteurs. Encore en dessous, les comptes d'élite. Et tout en bas, les comptes ordinaires.
+
+			Cette liste se présente donc de la façon suivante (à l'intérieur d'un cadre) :
+			\begin{itemize}
+				\item Administrateur : Dora.
+				\item Auteurs :
+				\begin{itemize}
+					\item Oxylos
+					\item Tarran
+				\end{itemize}
+				\item Modérateurs :
+				\begin{itemize}
+					\item IcarosWilos
+					\item Sötnos Pepper
+					\item Kodmowara
+				\end{itemize}
+				\item Comptes ordinaires :
+				\begin{itemize}
+					\item Jean-Jacques
+					\item Bernard
+					\item Jean-Roger
+					\item Jean-Kévin
+					\item Jean Dugros
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+					\item Coq
+				\end{itemize}
+			\end{itemize}
 
 		\subsection{Accès aux pages de profil}
 			Il y a deux façons et demi d'accéder à la page de profil d'un inscrit. La première façon, c'est en passant par le bouton du header "voir les inscrits" et de cliquer sur le profil. La deuxième façon, c'est qu'à chaque fois qu'un inscrit fait quelque chose (commentaire, article, super-suite d'immage lue par le super-lecteur, etc.), son nom est écrit à côté de ce qu'il fait. Il suffit alors de cliquer dessus pour voir son profil. La demi façon restante est que, lorsque vous êtes connecté, dans le header, à la place du bouton "se connecter/s'inscrire", il y a un bouton qui porte le nom du pseudo du connecté. En cliquant dessus, la personne connectée accède à sa page de profil qu'il peut modifier.
@@ -510,51 +888,34 @@
 		\subsection{Messagerie}
 			Il me semble que la messagerie de l'ancien site n'était pas si dégueulasse que ça. On pourrait simplement ajouter quelques fonctionnalités : un bouton "répondre" pour les comptes ordinaires, un bouton "répondre par mail" (si l'utilisateur a renseigné son mail) pour les modérateurs et plus. 
 
-	\section{Informations moins importantes}
 
-		Dans toute la partie concernant les profils, le header ne change pas drastiquement :
-		\begin{enumerate}
-			\item Un bouton qui mène aux partenaires (i.e. autres sites que nous recommandons).
-			\item Un bouton pour s'inscrire/se connecter.
-			\item Un bouton "voir les inscrits".			
-			\item Un bouton "à propos".
-			\item Un bouton "contact".
-			\item Un bouton "outre-ça" pour revenir à l'accueil du site.
-		\end{enumerate}
+\chapter{Liens} \label{liens}
+	
+	Le header, le footer et le design sont ceux de la partie communauté (cf. chapitre \ref{communaute})
 
-		Le footer est le même que celui de la page d'accueil.
+	Ce que tu avais fait dans l'ancien Outre-Ça était presque parfait. Seul le design sera modifié.
 
-\chapter{La page des liens}
-	Ce que tu avais fait dans l'ancien Outre-Ça était presque parfait. J'ai juste envie d'en modifier un peu le design, mais dans le fond j'en suis déjà assez satisfait.
+\chapter{À propos} \label{a_propos}
 
-\chapter{Archives}
-	Y'a deux sortes d'archives. Le vieux site, et les futures archives du nouveau site.
-	\section{Le vieux site}
-		On accède au vieux site par le bouton du header de la page d'accueil. En cliquant sur ce bouton, le site se présente exactement tel qu'il existait avant, à deux détails près. 
-		\begin{enumerate}
-			\item Sur tout le bord de l'écran, il y aura une sorte de texture de toile d'araignée.
-			\item Dans le header, il y aura un bouton en plus : "retour vers le site actuel" ou quelque chose comme ça. 
-		\end{enumerate}
-
-	\section{Les archives actuelles}
-		On y accède par un bouton du header interne à chaque blog. Les archives d'un blog donné ne donnent accès qu'aux articles que l'auteur en question a écrites. Les archives se présentent sous une forme de liste chronologique. Les archives du blog de Boulet (\url{http://bouletcorp.com}) sont ce qui se rapproche le plus de ce que je veux. 
-
-		Le header ne change pas beaucoup :
-		\begin{enumerate}
-			\item Un bouton qui mène aux partenaires (i.e. autres sites que nous recommandons).
-			\item Un bouton pour s'inscrire/se connecter.
-			\item Un bouton "voir les inscrits".			
-			\item Un bouton "à propos".
-			\item Un bouton "contact".
-			\item Un bouton "outre-ça" pour revenir à l'accueil du site.
-			\item Retour au blog fait quitter les archives et revenir au blog.
-		\end{enumerate}
-
-		Le footer est le même que sur les blogs.
+	À rédiger de nouveau. Mentionner l'ancien site, donner la possibilité de le visiter.
 
 
 \chapter{Logiciel de dialogue instantané} \label{dialogue}
 	\emph{À rédiger en collaboration avec Laurent\ldots}
+
+\chapter{Archive ancestrale : L'Outre-Ça 2.0}
+	On hébergera toutes les vieilles publications de l'ancien site sur notre serveur. On pourra y accéder via le \emph{À propos}. Par exemple dans le répertoire \url{outre-ca.fr/archives_ancestrales}
+
+	Il faudrait faire en sorte que l'url \url{www.perso.crans.org/gmastio} ainsi que toutes les branches renvoient directement à \url{www.outre-ca.fr}.
+
+
+\chapter{Perspective pour la version 3.1}
+	
+	\begin{itemize}
+		\item Développer la partie communautaire et créer un forum. 
+		\item Développer plein de petits trucs utiles quand on possède un serveur pour tous les comptes de rang supérieurs ou égaux aux modérateurs.
+		\item \emph{D'autres idéees s'ajouteront.}
+	\end{itemize}
 
 
 \end{document}
